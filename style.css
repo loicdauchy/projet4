@@ -1,0 +1,76 @@
+body{
+
+    background-color: white;
+}
+
+.headerdiv{
+
+    border-bottom:5px solid gold !important;
+    z-index:150;
+}
+h1{
+
+    font-size: 100px;
+    text-shadow: black 1px 1px 1px;
+    bottom: 100px;
+    color: gold;
+    position: absolute;
+    justify-content: center;
+}
+.titreaccueil{
+
+    display: flex;
+    justify-content: center;
+}
+.imgaccueil{
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.présentation{
+
+}
+.imageaccueil{
+
+    
+    height:100%;
+    width: 100%;
+    
+}
+.titretables{
+
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.headtables{
+
+    background-color:gold;
+}
+footer{
+
+    background-color: grey;
+    margin-top: 15%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.maps{
+
+    margin-top: auto;
+}
+.maptitle{
+
+    display: flex;
+    justify-content: center;
+    width:100%;
+    
+}
+.info{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:50%;
+    margin:auto;
+}
