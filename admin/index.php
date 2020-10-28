@@ -9,36 +9,38 @@ include 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>hertz</title>
 </head>
 <body>
 <header>
+
         <div class="headerdiv">
             
             <nav class="navbar navbar-expand-sm bg-white navbar-white">
                 <a class="navbar-brand" href="#">
-                    <div class="logonavbar"><img src="image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
+                    <div class="logonavbar"><img src="../image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
                 </div>
                 </a>
             </nav>
         </div>
         <div id="schroll">
-                <h2 class="schroll">Voir nos véhicules</h2>
-                <a href="#vehiculesList container-fluid"><img src="image/scrolldown.png" alt=""></a>
+                <h2 class="schroll">Gestion</h2>
+                <a href="#registre"><img src="../image/scrolldown.png" alt=""></a>
             </div>
     </header>
+    <section class="adminbody">
 <!-- AFFICHER LES LOCATIONS -->
-<h3>Enregistrement d'une location</h3>
+<div class="enregistrement container-fluid">
+<h3 id="registre">Enregistrement d'une location</h3>
     <form method='GET' action="index.php">
         <input type="text" name="id" placeholder="Référence de la voiture">
         <input type="text" name="idClient" placeholder="Référence du client">
         <input type="date" name="dateloc">
         <input type="date" name="datefinloc">
-        <button type="submit" value="ajouter" name="action">Ajouter</button>
+        <button style="background-color:gold;" type="submit" value="ajouter" name="action">Ajouter</button>
     </form>
     <br>
-
 <?php
 
 $recuperation = $db->query('SELECT * FROM louer');
@@ -228,7 +230,7 @@ AFFICHER LES VOITURES -->
         <input type="text" name="modele" placeholder="Modele">
         <input type="date" name="annees" placeholder="Années">
         <input type="text" name="kilometrage" placeholder="Klm">
-        <button type="submit" value="ajouter" name="action">Ajouter</button>
+        <button style="background-color:gold;" type="submit" value="ajouter" name="action">Ajouter</button>
     </form>
 <br>
 <?php
@@ -262,7 +264,7 @@ AFFICHER LES VOITURES -->
         <input type="text" name="adresse" placeholder="Adresse">
         <input type="text" name="cp" placeholder="Code Postal">
         <input type="text" name="ville" placeholder="Ville">
-        <button type="submit" value="ajouter" name="action">Ajouter</button>
+        <button style="background-color:gold;" type="submit" value="ajouter" name="action">Ajouter</button>
     </form>
 <br>
 <?php
@@ -283,6 +285,30 @@ AFFICHER LES VOITURES -->
                     </div>";  
                 }
 ?>
-    
+</div>
+</section>
+      <section>
+      
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="maptitle col-12 col-md-6">
+                <iframe class="maps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.8863249110263!2d5.551161015992889!3d46.668505379133705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cd78d87b0768b%3A0x6dc52ab5581eb62b!2s2%20Route%20de%20Montaigu%2C%2039000%20Lons-le-Saunier!5e0!3m2!1sfr!2sfr!4v1603722796036!5m2!1sfr!2sfr"
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                    aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="info col-12 col-md-6">
+                <p>Lorem ipsum dolor<br> sit amet consectetur, adipisicing elit. A minus maxime alias incidunt
+                    suscipit aspernatur expedita nisi tempora autem assumenda. Lorem ipsum, dolor sit amet
+                    consectetur<br> adipisicing elit. Cum cumque ipsam necessitatibus quam, illum unde a?<br>
+                    Veritatis sapiente saepe voluptatem.</p>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+</section>
 </body>
 </html>

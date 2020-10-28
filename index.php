@@ -46,8 +46,8 @@ for($i=0;$i<count($idCarlouer);$i++){
                     <div class="logonavbar"><img src="image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
                 </div>
                 </a>
+                <a class="buttonadmin" href="http://localhost/projet4/admin/index.php" target="_blank"><button type="button" class="btn btn-warning">Warning</button></a>
             </nav>
-        </div>
         <div id="schroll">
                 <h2 class="schroll">Voir nos véhicules</h2>
                 <a href="#vehiculesList container-fluid"><img src="image/scrolldown.png" alt=""></a>

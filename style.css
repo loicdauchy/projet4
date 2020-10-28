@@ -111,3 +111,15 @@ footer{
       width: 20px;
       margin-left: 25px;
   }
+  /* partieadmin */
+  .adminbody{
+    background-color:silver;
+    
+  }
+
+  .enregistrement.container-fluid{
+      
+    margin-top:5%;
+    margin-left:5%;
+
+  }
