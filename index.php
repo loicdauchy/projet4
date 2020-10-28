@@ -45,12 +45,6 @@ for($i=0;$i<count($idCarlouer);$i++){
                 <a class="navbar-brand" href="#">
                     <img src="image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
                 </a>
-                <ul>
-                    <a href="#" style="color:black;">Liste véhicules</a>
-                </ul>
-                <ul>
-                    <a href="#" class="numerotel" style="color: black;">0606060606</a>
-                </ul>
             </nav>
         </div>
       

@@ -1,6 +1,6 @@
 body{
 
-    background-color: white;
+    
 }
 
 .headerdiv{
@@ -9,18 +9,9 @@ body{
     z-index:150;
 }
 header {
-    background: url(image/hertz-choix-1024x640.jpg) fixed;
-    background-size : cover;
-    background: black !important;
-}
-h1{
-
-    font-size: 100px;
-    text-shadow: black 1px 1px 1px;
-    bottom: 100px;
-    color: gold;
-    position: absolute;
-    justify-content: center;
+    
+    background-color: black;
+    
 }
 .titreaccueil{
 
