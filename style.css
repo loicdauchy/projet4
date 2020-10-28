@@ -8,6 +8,10 @@ body{
     border-bottom:5px solid gold !important;
     z-index:150;
 }
+header {
+    background: url(image/hertz-choix-1024x640.jpg) fixed;
+    background-size : cover;
+}
 h1{
 
     font-size: 100px;
@@ -28,9 +32,7 @@ h1{
     display: flex;
     justify-content: center;
 }
-.présentation{
 
-}
 .imageaccueil{
 
     
