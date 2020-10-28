@@ -1,0 +1,40 @@
+Évènement : Projet : Création d’une administration PHP
+Description : Vous venez d’entrer en tant que stagiaire dans la société de location de véhicule Hertz à Lons le Saunier.
+En totale restructuration, on vous a demandé de réaliser une interface recensant tous les véhicules disponibles à la location.
+Vous interface devra permettre à l’administrateur de consulter la liste de tous les véhicules, de pouvoir en ajouter un, en modifier un et en supprimer un.
+Il devra aussi être possible de lister toutes les personnes ayant déjà loué un véhicule, d’afficher leurs informations telles que le nom, le prénom, l’adresse,
+le code postal et la ville de celui-ci. Sur la fiche d’un client il faudra aussi permettre de voir tous les véhicules qu’il à loué et s’il en loue un actuellement.
+Il faudra trouver un moyen pour faire ressortir l’information s’il est actuellement en train d’en louer un.
+La page de listing des véhicules, devra aussi montrer de manière rapide si un véhicule est en location actuellement ou pas.
+De plus il faudra aussi montrer rapidement si un véhicule à du retard dans sa restitution.
+
+Bonus :
+Si vous le souhaitez, vous pouvez faire un moteur de recherche avec les filtres suivant :
+Actuellement à la location : pour voir uniquement les véhicules en location
+En retard : Pour voir tous les véhicules avec un retard de restitution
+Bientôt de retour : Pour voir les véhicules en location bientôt de retour avec le nombre de jours avant leur retour.
+Tri par personne : Pour afficher tous les véhicules loués par une personne choisie.
+Tri par véhicule : Pour afficher toutes les personnes qui ont loué le véhicule choisi.
+De base votre administration ne doit pas être sécurisé, toutefois si vous souhaitez aller plus loin vous pouvez mettre en place un système
+de Login qui interrogera la BDD pour voir si celui-ci est bien enregistré dans la BDD.
+
+Il est attendu un rendu en ligne et sur GitHUB + La fourniture d'un MCD
+
+Ce travail se fera par groupe de deux.
+Une personne sera en charge du développement, l’autre de l’intégration
+
+Groupes
+Sami (D) / Taylor (I)
+Frédéric (D) / Yann (I)
+Loïc (D) / Johan (I)
+Anaïs (D) / Gianni (I)
+Camille (D) / Nasser (I)
+Abdou (D) / Elmi (I)
+Henry (D/I)
+
+D = Développement
+I = Intégration
+
+Du 26/10/2020 au 30/10/2020
+Du : 2020-10-26 08:00
+Au : 2020-10-30 22:00
