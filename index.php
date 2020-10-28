@@ -82,10 +82,10 @@ for($i=0;$i<count($idCarlouer);$i++){
                         <?php
                         // echo $idCar[0]['id_car_vehicules'];
                    if (in_array($produits['id_car_vehicules'],$vehiculesRechercher)){
-                       echo "<td> pas dispo </td>";
+                       echo "<td> <img class='dispo' src='image/close'> </td>";
                        
                    }else {
-                       echo "<td> dispo </td>";
+                       echo "<td> <img class='dispo' src='image/check'> </td>";
                    }
                     
                     ?>
