@@ -3,13 +3,31 @@ include 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Hertz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>hertz</title>
 </head>
 <body>
+<header>
+        <div class="headerdiv">
+            
+            <nav class="navbar navbar-expand-sm bg-white navbar-white">
+                <a class="navbar-brand" href="#">
+                    <div class="logonavbar"><img src="image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
+                </div>
+                </a>
+            </nav>
+        </div>
+        <div id="schroll">
+                <h2 class="schroll">Voir nos véhicules</h2>
+                <a href="#vehiculesList container-fluid"><img src="image/scrolldown.png" alt=""></a>
+            </div>
+    </header>
 <!-- AFFICHER LES LOCATIONS -->
 <h3>Enregistrement d'une location</h3>
     <form method='GET' action="index.php">
