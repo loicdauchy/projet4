@@ -11,6 +11,7 @@ body{
 header {
     background: url(image/hertz-choix-1024x640.jpg) fixed;
     background-size : cover;
+    background: black !important;
 }
 h1{
 

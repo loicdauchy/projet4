@@ -10,12 +10,18 @@ $query->execute();
 
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-$idCar = $db->query('SELECT id_car_vehicules FROM vehicules order by id_car_vehicules');
-$idCar = $idCar->fetchAll();
+// $idCar = $db->query('SELECT id_car_vehicules FROM vehicules');
+// $idCar = $idCar->fetchAll();
+
 
 
 $idCarlouer = $db->query('SELECT id_car_vehicules FROM louer');
 $idCarlouer = $idCarlouer->fetchALL();
+
+for($i=0;$i<count($idCarlouer);$i++){
+    $vehiculesRechercher[]=$idCarlouer[$i]['id_car_vehicules'];
+}
+// var_dump($vehiculesRechercher);
 ?>
 
 
@@ -75,7 +81,8 @@ $idCarlouer = $idCarlouer->fetchALL();
                         <td><?= $produits['annees_vehicules'] ?></td>
                         <td><?= $produits['kilometrage_vehicules'] ?></td>
                         <?php
-                   if (in_array($produits['id_car_vehicules'],$idCarlouer)){
+                        // echo $idCar[0]['id_car_vehicules'];
+                   if (in_array($produits['id_car_vehicules'],$vehiculesRechercher)){
                        echo "<td> pas dispo </td>";
                        
                    }else {
