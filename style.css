@@ -15,7 +15,7 @@ body{
    
 }
 .headerdiv{
- 
+    opacity: 80%;
 }
 header {
     background: url(image/Hertz.jpg) fixed;
@@ -105,4 +105,9 @@ footer{
   #schroll a img:hover {
     transform: rotate(180deg);
     transition: 0.3s;
+  }
+
+  .dispo {
+      width: 20px;
+      margin-left: 25px;
   }
