@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+  }
+
 body{
 
     background-color: white;
@@ -11,7 +16,7 @@ body{
 header {
     background: url(image/hertz-choix-1024x640.jpg) fixed;
     background-size : cover;
-    background: black !important;
+    min-height: 100vh;
 }
 h1{
 
@@ -77,3 +82,21 @@ footer{
     width:50%;
     margin:auto;
 }
+#schroll {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+  }
+  
+  #schroll a img {
+    transition: 0.7s;
+  }
+  
+  #schroll a img:hover {
+    transform: rotate(180deg);
+    transition: 0.3s;
+  }
