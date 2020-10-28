@@ -1,17 +1,35 @@
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+  }
+
 body{
 
     
 }
 
+.navbar-brand{
+    
+}
+.logonavbar{
+   
+}
 .headerdiv{
-
-    border-bottom:5px solid gold !important;
-    z-index:150;
+ 
 }
 header {
-    
-    background-color: black;
-    
+    background: url(image/Hertz.jpg) fixed;
+    background-size : cover;
+    min-height: 100vh;
+}
+h1{
+
+    font-size: 100px;
+    text-shadow: black 1px 1px 1px;
+    bottom: 100px;
+    color: gold;
+    position: absolute;
+    justify-content: center;
 }
 .titreaccueil{
 
@@ -34,7 +52,7 @@ header {
 }
 .titretables{
 
-    margin-top: 100px;
+    margin-top:5%;
     display: flex;
     justify-content: center;
 }
@@ -55,6 +73,7 @@ footer{
 }
 .maptitle{
 
+    margin: auto;
     display: flex;
     justify-content: center;
     width:100%;
@@ -62,9 +81,28 @@ footer{
 }
 .info{
 
+    margin: auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    width:50%;
-    margin:auto;
+    width:100%;
+    
 }
+#schroll {
+    color: white;
+    text-shadow: black 3px 3px 3px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+  }
+  
+  #schroll a img {
+    transition: 0.7s;
+  }
+  
+  #schroll a img:hover {
+    transform: rotate(180deg);
+    transition: 0.3s;
+  }
