@@ -60,9 +60,29 @@ h1{
 
     background-color:gold;
 }
+.liste{
+
+   background-image: url("image/car-1281640_1920.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   
+  
+}
+
+td{
+
+  color: white;
+  text-shadow: black 2px 2px 2px;
+  font-weight: bold;
+  font-size:2vh;
+
+
+}
 footer{
 
-    background-color:whitesmoke;
+    background-image: url("image/mercedes-3417100_1920.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
     margin-top: 15%;
     display: flex;
     flex-wrap: wrap;
@@ -81,6 +101,7 @@ footer{
 }
 .info{
 
+  background-color:white;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -124,22 +145,34 @@ footer{
 
   .enregistrement.container-fluid{
       
-    margin-top:5%;
-    margin-left:5%;
+    margin-top:15%;
+    background-image:url("image/mercedes-841465_1920.jpg");
+    background-position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
 
   }
   input{
 
     border:none;
+    background-color:white;
   }
   button{
-
-    background-color:silver;
+    display: inline-block;
+    padding: 5px 10px;
+    background: gold;
+    border: 1px solid black;
+    color: black;
   }
+
   hr{
       background-color: gold !important;
   }
-  ::placeholder{
+ body{
 
-    background-color:rgb;
-  }
+  background-color:whites;
+  
+ }
+
