@@ -22,6 +22,7 @@ include 'connect.php';
                     <div class="logonavbar"><img src="../image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
                 </div>
                 </a>
+               <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
             </nav>
         </div>
         <div id="schroll">
