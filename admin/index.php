@@ -278,6 +278,7 @@ AFFICHER LES VOITURES -->
                     <input type='text' name='adresse' value='".$client['adresse_clients']."'>
                     <input type='text' name='cp' value='".$client['cp_clients']."'>
                     <input type='text' name='ville' value='".$client['ville_clients']."'>
+                    <input type='text' name='mail' value='".$client['mail_clients']."'>
                     
                     <button type='submit' value='modifier' name='action'>Modifier</button>
                     <button type='submit' value='supprimer' name='action'>Supprimer</button>

@@ -3,17 +3,6 @@ html {
     overflow-y: scroll;
   }
 
-body{
-
-    
-}
-
-.navbar-brand{
-    
-}
-.logonavbar{
-   
-}
 .headerdiv{
     opacity: 80%;
 }
@@ -142,4 +131,8 @@ footer{
   ::placeholder{
 
     background-color:rgb;
+  }
+
+  .Bienvenue {
+    color: white;
   }

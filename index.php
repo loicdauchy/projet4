@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+?> 
 <?php
 include 'connect.php';
 ?>
@@ -48,13 +49,28 @@ for($i=0;$i<count($idCarlouer);$i++){
                 </div>
                 </a>
 
+                <form action="loginClients.php" method="POST">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Mot de passe">
+                <button class="btn btn-warning" type="submit" name="submit">Connexion</button>
+                </form>
+
+                <a href="inscription.php"><button class="btn btn-warning btn-block">Inscription</button></a>
+
                 <form action="login.php" method="POST">
                 <input type="text" name="email" placeholder="Email">
                 <input type="password" name="pass" placeholder="Mot de passe">
-                <button class="btn btn-warning" type="submit" name="submit">Connexion</button>
+                <button class="btn btn-warning" type="submit" name="submit">Connexion Admin</button>
 
             </form>
             </nav>
+            <?php
+                echo "<h3 class='Bienvenue'> Bienvenue " . $_SESSION['clients']."</h3>";
+                echo'<form action="deconnexion.php">
+                <button class="btn btn-warning"> Deconnexion</button>
+                </form>';
+            ?>
+           
             
         </div>
         <div id="schroll">
