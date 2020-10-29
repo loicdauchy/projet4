@@ -113,7 +113,7 @@ footer{
   }
   /* partieadmin */
   .adminbody{
-    background-color:silver;
+    background-color:whitesmoke;
     
   }
 
@@ -122,4 +122,19 @@ footer{
     margin-top:5%;
     margin-left:5%;
 
+  }
+  input{
+
+    border:none;
+  }
+  button{
+
+    background-color:silver;
+  }
+  hr{
+      background-color: gold !important;
+  }
+  ::placeholder{
+
+    background-color:rgb;
   }

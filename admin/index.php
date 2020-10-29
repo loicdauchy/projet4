@@ -32,13 +32,15 @@ include 'connect.php';
     <section class="adminbody">
 <!-- AFFICHER LES LOCATIONS -->
 <div class="enregistrement container-fluid">
+    
 <h3 id="registre">Enregistrement d'une location</h3>
+<hr>
     <form method='GET' action="index.php">
         <input type="text" name="id" placeholder="Référence de la voiture">
         <input type="text" name="idClient" placeholder="Référence du client">
         <input type="date" name="dateloc">
         <input type="date" name="datefinloc">
-        <button style="background-color:gold;" type="submit" value="ajouter" name="action">Ajouter</button>
+        <button type="submit" value="ajouter" name="action">Ajouter</button>
     </form>
     <br>
 <?php
@@ -223,14 +225,14 @@ if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id_cl
 AFFICHER LES VOITURES -->
 
 <h3>Nos voitures</h3>
-<br>
+<hr>
 <p>Ajouter un nouveau véhicule</p>
     <form method='GET' action="index.php">
         <input type="text" name="marque" placeholder="Marque">
         <input type="text" name="modele" placeholder="Modele">
         <input type="date" name="annees" placeholder="Années">
         <input type="text" name="kilometrage" placeholder="Klm">
-        <button style="background-color:gold;" type="submit" value="ajouter" name="action">Ajouter</button>
+        <button type="submit" value="ajouter" name="action">Ajouter</button>
     </form>
 <br>
 <?php
@@ -256,7 +258,7 @@ AFFICHER LES VOITURES -->
 <!-- INFORMATION CLIENTS -->
 
 <h3>Information Clients</h3>
-<br>
+<hr>
 <p>Ajouter un nouveau Client</p>
     <form method='GET' action="index.php">
         <input type="text" name="nom" placeholder="Nom">
@@ -264,7 +266,7 @@ AFFICHER LES VOITURES -->
         <input type="text" name="adresse" placeholder="Adresse">
         <input type="text" name="cp" placeholder="Code Postal">
         <input type="text" name="ville" placeholder="Ville">
-        <button style="background-color:gold;" type="submit" value="ajouter" name="action">Ajouter</button>
+        <button type="submit" value="ajouter" name="action">Ajouter</button>
     </form>
 <br>
 <?php
