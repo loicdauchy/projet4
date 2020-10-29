@@ -61,11 +61,7 @@ h1{
     background-color:gold;
 }
 .liste{
-
-   background-image: url("image/car-1281640_1920.jpg");
-   background-size: cover;
-   background-repeat: no-repeat;
-   
+ 
   
 }
 
@@ -82,10 +78,12 @@ footer{
 
     background-image: url("image/mercedes-3417100_1920.jpg");
     background-size:cover;
+    background-position: center;
     background-repeat: no-repeat;
-    margin-top: 15%;
+    margin-top: 10%;
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    
 }
 .maps{
 
@@ -141,7 +139,7 @@ footer{
 
   .enregistrement.container-fluid{
       
-    margin-top:15%;
+    margin-top:10%;
     background-image:url("image/mercedes-841465_1920.jpg");
     background-position: fixed;
     background-size: cover;
