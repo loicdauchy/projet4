@@ -49,31 +49,46 @@ h1{
 
     background-color:gold;
 }
+.liste{
+ 
+  
+}
+
+td{
+
+  
+  
+  font-weight: bold;
+  font-size:2vh;
+
+
+}
 footer{
 
-    background-color:whitesmoke;
-    margin-top: 15%;
+    background-image: url("image/mercedes-3417100_1920.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 10%;
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    
 }
 .maps{
 
     margin-top: auto;
-}
-.maptitle{
-
-    margin: auto;
     display: flex;
-    justify-content: center;
-    width:100%;
-    
 }
+
+
 .info{
 
+  background-color:white;
     margin: auto;
     display: flex;
-    justify-content: center;
     width:100%;
+    
+    
     
 }
 #schroll {
@@ -113,22 +128,33 @@ footer{
 
   .enregistrement.container-fluid{
       
-    margin-top:5%;
-    margin-left:5%;
+    margin-top:10%;
+    
+    
+
 
   }
   input{
 
     border:none;
+    background-color:white;
   }
   button{
-
-    background-color:silver;
+    display: inline-block;
+    padding: 5px 10px;
+    background: gold;
+    border: 1px solid black;
+    color: black;
   }
+
   hr{
       background-color: gold !important;
   }
-  ::placeholder{
+ body{
+
+  background-color:whitesmoke;
+  
+ }
 
     background-color:rgb;
   }
