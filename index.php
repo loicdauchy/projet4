@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 include 'connect.php';
 ?>
@@ -46,7 +47,15 @@ for($i=0;$i<count($idCarlouer);$i++){
                     <div class="logonavbar"><img src="image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
                 </div>
                 </a>
+
+                <form action="login.php" method="POST">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="pass" placeholder="Mot de passe">
+                <button class="btn btn-warning" type="submit" name="submit">Connexion</button>
+
+            </form>
             </nav>
+            
         </div>
         <div id="schroll">
                 <h2 class="schroll">Voir nos véhicules</h2>
