@@ -116,3 +116,30 @@ footer{
       display: flex !important;
       justify-content: space-between !important;
   }
+  /* partieadmin */
+  .adminbody{
+    background-color:whitesmoke;
+    
+  }
+
+  .enregistrement.container-fluid{
+      
+    margin-top:5%;
+    margin-left:5%;
+
+  }
+  input{
+
+    border:none;
+  }
+  button{
+
+    background-color:silver;
+  }
+  hr{
+      background-color: gold !important;
+  }
+  ::placeholder{
+
+    background-color:rgb;
+  }
