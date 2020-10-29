@@ -20,6 +20,7 @@ h1{
     position: absolute;
     justify-content: center;
 }
+
 .titreaccueil{
 
     display: flex;
@@ -48,21 +49,18 @@ h1{
 .headtables{
 
     background-color:gold;
-}td{
-
-  background-color: white;
 }
-.liste{
- 
+
+th{
+
+ font-size:2.3vh;
 }
 
 td{
-
   
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: white;
   
-  font-weight: bold;
-  font-size:2vh;
-
 
 }
 footer{
@@ -132,6 +130,7 @@ footer{
   .enregistrement.container-fluid{
       
     margin-top:10%;
+
     
     
 
