@@ -56,8 +56,8 @@ h1{
 
 td{
 
-  color: white;
-  text-shadow: black 2px 2px 2px;
+  
+  
   font-weight: bold;
   font-size:2vh;
 
@@ -129,10 +129,7 @@ footer{
   .enregistrement.container-fluid{
       
     margin-top:10%;
-    background-image:url("image/mercedes-841465_1920.jpg");
-    background-position: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
+    
     
 
 
@@ -155,7 +152,7 @@ footer{
   }
  body{
 
-  background-color:whites;
+  background-color:whitesmoke;
   
  }
 
