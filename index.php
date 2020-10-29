@@ -64,19 +64,21 @@ for($i=0;$i<count($idCarlouer);$i++){
 
             </form>
             </nav>
+            <div>
             <?php
                 echo "<h3 class='Bienvenue'> Bienvenue " . $_SESSION['clients']."</h3>";
                 echo'<form action="deconnexion.php">
                 <button class="btn btn-warning"> Deconnexion</button>
                 </form>';
             ?>
+            </div>
            
             
         </div>
         <div id="schroll">
                 <h2 class="schroll">Voir nos véhicules</h2>
                 <a href="#vehiculesList container-fluid"><img src="image/scrolldown.png" alt=""></a>
-            </div>
+        </div>
     </header>
 
     <section id="vehiculesList container-fluid">
