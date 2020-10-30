@@ -27,7 +27,7 @@ include '../connect.php';
         </div>
         <div class="schrolladmin" id="schroll">
                 <h2 class="schroll">Gestion</h2>
-                <a href="#registre"><img src="../image/scrolldown.png" alt=""></a>
+                <a href="#registre"><img src="../image/down-arrow" width="80px" alt=""></a>
             </div>
     </header>
     <section class="adminbody">

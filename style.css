@@ -4,10 +4,10 @@ html {
   }
 
 .headerdiv{
-    opacity: 80%;
+    
 }
 header {
-    background: url(image/Hertz.jpg) fixed;
+    background: url(image/393302f1-2020-hertz-hendrick-motorsp.webp) fixed;
     background-size : cover;
     background-position:center;
     min-height: 100vh;
@@ -124,9 +124,11 @@ footer{
       
 }
 #schroll {
-    color: whitesmoke;
-    text-shadow: black 3px 3px 3px;
-    font-family: 'Open Sans', sans-serif;
+    color: gold;
+    -webkit-text-stroke:2px black ;
+    text-shadow: black 2px 2px 2px;
+    font-family:fantasy;
+    font-size:3vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,11 +137,11 @@ footer{
   }
   .schrollaccueil{
 
-    margin-top:15%;
+    margin-top:auto;
   }
   .schrolladmin{
 
-    margin-top: 29%;
+    
   }
   
   #schroll a img {
@@ -169,7 +171,7 @@ footer{
   }
   
   .adminbody{
-    background-color:whitesmoke;
+    background-color:white;
     
   }
 
@@ -182,7 +184,7 @@ footer{
   input{
 
     border:none;
-    background-color:white;
+    background-color:whitesmoke;
     box-shadow: black 2px 2px 2px;
   }
   button{
