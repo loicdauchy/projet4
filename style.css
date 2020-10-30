@@ -9,6 +9,7 @@ html {
 header {
     background: url(image/Hertz.jpg) fixed;
     background-size : cover;
+    background-position:center;
     min-height: 100vh;
 }
 h1{
@@ -19,6 +20,10 @@ h1{
     color: gold;
     position: absolute;
     justify-content: center;
+}
+p{
+
+background: white;
 }
 
 .titreaccueil{
@@ -85,8 +90,7 @@ footer{
 .info{
 
   
-  background-origin:padding-box;
-  background-color: whitesmoke;
+  
   margin: auto;
   display: flex;
   width:100%;
