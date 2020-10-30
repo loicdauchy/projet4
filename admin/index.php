@@ -331,6 +331,9 @@ AFFICHER LES VOITURES -->
                     
                     </div>";  
                 }
+
+                $date = date("d/m/Y");
+                echo "on est le ".$date." aujourd'hui !";
 ?>
 </div>
 </section>
