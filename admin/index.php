@@ -322,7 +322,19 @@ AFFICHER LES VOITURES -->
                                 echo "<option value=''>".$carDejaLouer['id_car_vehicules'] ."</option>";                                                                                                                                                        
                     }
 ?> 
-                        </select>                   
+                        </select>
+<?php
+                        $date = date("Y-m-d");
+                        $recup1 = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
+                        $recup1 = $recup1->fetch();
+                        if ($date > $recup1['date_fin']){
+                            echo "<input style='background:red;' type='text' name='late' value='En retard'>";
+                        }else if($date >= $recup1['date_louer'] AND $date <= $recup1['date_fin']){
+                            echo "<input style='background:green;' type='text' name='loc' value='En cours'>";
+                        }else{
+                            echo "<input style='background:blue;' type='text' name='pasLoc' value='Pas de location'>";
+                        }
+?>
 <?php                    
                     echo"<button type='submit' value='modifier' name='action'>Modifier</button>
                     <button type='submit' value='supprimer' name='action'>Supprimer</button>
@@ -331,9 +343,6 @@ AFFICHER LES VOITURES -->
                     
                     </div>";  
                 }
-
-                // $date = date("d/m/Y");
-                // echo "on est le ".$date." aujourd'hui !";
 ?>
 </div>
 </section>
