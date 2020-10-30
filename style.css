@@ -14,16 +14,30 @@ header {
 }
 h1{
 
-    font-size: 100px;
-    text-shadow: black 1px 1px 1px;
+    font-family:fantasy;
+    font-weight: bold !important;
+    font-size: 150px;
+    text-shadow: black 2px 2px 2px;
     bottom: 100px;
     color: gold;
     position: absolute;
     justify-content: center;
 }
+h2{
+
+font-family: fantasy;
+font-weight: bold;
+}
+h3{
+
+  font-family: fantasy;
+font-weight: bold;
+}
 p{
 
-background: white;
+background: rgba(255, 255, 255, 0.637);
+font-weight: bold;
+
 }
 
 .titreaccueil{
@@ -56,16 +70,22 @@ background: white;
     background-color:gold;
 }
 .table{
- background-color: whitesmoke;
+ background-color: white;
 }
 th{
 
- font-size:2.3vh;
+font-family: fantasy;
+font-weight: bold;
+font-size: 2.5vh;
+
 }
 
 td{
   
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:fantasy;
+  
+  
+  
   
 
 }
@@ -84,19 +104,24 @@ footer{
 
     margin-top: auto;
     display: flex;
+    flex-wrap: wrap;
+}
+.connectadmin{
+
+  
+  margin-left: auto;
+  
+  
 }
 
 
 .info{
 
-  
-  
-  margin: auto;
   display: flex;
+  flex-wrap: wrap;
+  margin: auto;
   width:100%;
-    
-    
-    
+      
 }
 #schroll {
     color: whitesmoke;
@@ -137,16 +162,17 @@ footer{
   }
   .Bienvenue{
 
-    color: whitesmoke;
-    text-shadow: black 2px 2px 2px;
+    font-family: fantasy;
+    color: black !important;
+
   
   }
   
-  /* partieadmin */
   .adminbody{
     background-color:whitesmoke;
     
   }
+
 
   .enregistrement.container-fluid{
       
@@ -160,6 +186,7 @@ footer{
     box-shadow: black 2px 2px 2px;
   }
   button{
+    font-family: fantasy;
     display: inline-block;
     padding: 5px 10px;
     background: gold;
@@ -178,14 +205,12 @@ footer{
 
  }
  
-  .Bienvenue {
-    color: white;
-  }
 
-  /* login */
+  
+.backgroundbody{
 
-
-  .container-fluid.footer {
-    padding: 0 !important;
-  }
+  background-image: url("image/mercedes-841465_1920.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
