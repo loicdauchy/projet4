@@ -84,11 +84,12 @@ footer{
 
 .info{
 
-  color:whitesmoke;
-   content: background:;
-    margin: auto;
-    display: flex;
-    width:100%;
+  
+  background-origin:padding-box;
+  background-color: whitesmoke;
+  margin: auto;
+  display: flex;
+  width:100%;
     
     
     
@@ -139,7 +140,7 @@ footer{
   
   /* partieadmin */
   .adminbody{
-    background-color:white;
+    background-color:whitesmoke;
     
   }
 
@@ -172,10 +173,15 @@ footer{
   background-color: white;
 
  }
-
+ 
   .Bienvenue {
     color: white;
   }
 
   /* login */
+
+
+  .container-fluid.footer {
+    padding: 0 !important;
+  }
 
