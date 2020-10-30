@@ -75,14 +75,12 @@ for($i=0;$i<count($idCarlouer);$i++){
            
             
         </div>
-                <a class="buttonadmin" href="http://localhost/projet4/admin/index.php" target="_blank"><button type="button" class="btn btn-warning">Warning</button></a>
             </nav>
         <div id="schroll">
                 <h2 class="schroll">Voir nos véhicules</h2>
                 <a href="#vehiculesList container-fluid"><img src="image/scrolldown.png" alt=""></a>
         </div>
     </header>
-
     <section id="vehiculesList container-fluid">
         <div class="titretables">
             <h2>Liste véhicule</h2>

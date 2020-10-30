@@ -50,10 +50,9 @@ $recuperation = $db->query('SELECT * FROM louer');
 while ($louer = $recuperation->fetch()) {
     echo "<form action='index.php'><div> <input type='text' name='id' value='".$louer['id_car_vehicules']."'>
     <input type='text' name='idClient' value='".$louer['id_client_clients']."'>
-    <input type='text' name='dateloc' value='".$louer['date_louer']."'>
+    <input type='date' name='dateloc' value='".$louer['date_louer']."'>
     <input type='date' name='datefinloc' value='".$louer['date_fin']."'>
     
-    <button type='submit' value='modifier' name='action'>Modifier</button>
     <button type='submit' value='supprimer' name='action'>Supprimer</button>
     
     </form>
@@ -147,6 +146,11 @@ while ($louer = $recuperation->fetch()) {
 
 
 
+
+
+
+
+
 // SUPPRIMER UNE VOITURE
         if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id'])){
         
@@ -177,6 +181,29 @@ if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id_cl
             echo 'Veuillez recommencer svp, une erreur est survenue';
         }
     }
+
+
+// SUPPRIMER UNE LOCATION
+if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id'])){
+        
+    $supprimer = $db->prepare('DELETE FROM louer WHERE id_car_vehicules =:id');
+    $supprimer->bindParam(':id', $_GET['id'], 
+    PDO::PARAM_STR);
+    $supprimer = $supprimer->execute();
+        if($supprimer){
+            echo 'votre enregistrement a bien été supprimé';
+            
+        
+        } else {
+            echo 'Veuillez recommencer svp, une erreur est survenue';
+        }
+    }
+
+
+
+
+
+
 
 
 
@@ -220,6 +247,12 @@ if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id_cl
                     }
                 }
 ?>               
+
+
+
+
+
+
 
 
 <!-- 
@@ -279,10 +312,19 @@ AFFICHER LES VOITURES -->
                     <input type='text' name='adresse' value='".$client['adresse_clients']."'>
                     <input type='text' name='cp' value='".$client['cp_clients']."'>
                     <input type='text' name='ville' value='".$client['ville_clients']."'>
-                    <input type='text' name='mail' value='".$client['mail_clients']."'>
-                    
-                    
-                    <button type='submit' value='modifier' name='action'>Modifier</button>
+                    <input type='text' name='mail' value='".$client['mail_clients']."'>";
+?>
+                        <select name='carDejaLouer'>
+                        <option value=''> Voiture déjà loué </option>
+<?php
+                        $recup = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
+                        while ($carDejaLouer = $recup->fetch()){                            
+                                echo "<option value=''>".$carDejaLouer['id_car_vehicules'] ."</option>";                                                                                                                                                        
+                    }
+?> 
+                        </select>                   
+<?php                    
+                    echo"<button type='submit' value='modifier' name='action'>Modifier</button>
                     <button type='submit' value='supprimer' name='action'>Supprimer</button>
                     
                     </form>
