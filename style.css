@@ -20,6 +20,7 @@ h1{
     position: absolute;
     justify-content: center;
 }
+
 .titreaccueil{
 
     display: flex;
@@ -49,18 +50,18 @@ h1{
 
     background-color:gold;
 }
-.liste{
- 
-  
+.table{
+ background-color: whitesmoke;
+}
+th{
+
+ font-size:2.3vh;
 }
 
 td{
-
   
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   
-  font-weight: bold;
-  font-size:2vh;
-
 
 }
 footer{
@@ -83,7 +84,8 @@ footer{
 
 .info{
 
-  background-color:white;
+  color:whitesmoke;
+   content: background:;
     margin: auto;
     display: flex;
     width:100%;
@@ -92,14 +94,22 @@ footer{
     
 }
 #schroll {
-    color: white;
+    color: whitesmoke;
     text-shadow: black 3px 3px 3px;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30%;
+    
+  }
+  .schrollaccueil{
+
+    margin-top:15%;
+  }
+  .schrolladmin{
+
+    margin-top: 29%;
   }
   
   #schroll a img {
@@ -120,24 +130,29 @@ footer{
       display: flex !important;
       justify-content: space-between !important;
   }
+  .Bienvenue{
+
+    color: whitesmoke;
+    text-shadow: black 2px 2px 2px;
+  
+  }
+  
   /* partieadmin */
   .adminbody{
-    background-color:whitesmoke;
+    background-color:white;
     
   }
 
   .enregistrement.container-fluid{
       
     margin-top:10%;
-    
-    
-
 
   }
   input{
 
     border:none;
     background-color:white;
+    box-shadow: black 2px 2px 2px;
   }
   button{
     display: inline-block;
@@ -145,22 +160,22 @@ footer{
     background: gold;
     border: 1px solid black;
     color: black;
+    text-shadow:goldenrod 2px 2px 2px;
+    box-shadow: black 2px 2px 2px;
   }
 
   hr{
       background-color: gold !important;
   }
+
  body{
+  background-color: white;
 
-  background-color:whitesmoke;
-  
  }
-
-    background-color:rgb;
-  }
 
   .Bienvenue {
     color: white;
   }
 
+  /* login */
 

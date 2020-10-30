@@ -7,9 +7,10 @@
 
             <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="style.css">
             <title>Connexion</title>
         </head>
-        <body>
+        <body class="backgroundbody">
         <div class="login-form">
             <?php 
                 if(isset($_GET['reg_err']))
@@ -94,7 +95,7 @@
                     <input type="password" name="password_retype" class="form-control" placeholder="Re-tapez le mot de passe" required="required" autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Inscription</button>
+                    <button type="submit" class="btn btn-warning btn-block">Inscription</button>
                 </div>   
             </form>
             <a href="index.php"><button class="btn btn-warning btn-block">Revenir à la page d'acceuil</button></a>
@@ -121,6 +122,7 @@
                 font-size: 15px;
                 font-weight: bold;
             }
+            
         </style>
         </body>
 </html>

@@ -25,7 +25,7 @@ include '../connect.php';
                <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
             </nav>
         </div>
-        <div id="schroll">
+        <div class="schrolladmin" id="schroll">
                 <h2 class="schroll">Gestion</h2>
                 <a href="#registre"><img src="../image/scrolldown.png" alt=""></a>
             </div>
