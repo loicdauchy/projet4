@@ -180,3 +180,8 @@ footer{
 
   /* login */
 
+
+  .container-fluid.footer {
+    padding: 0 !important;
+  }
+
