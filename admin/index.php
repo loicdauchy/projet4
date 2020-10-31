@@ -307,7 +307,7 @@ AFFICHER LES VOITURES -->
 <?php
                 $recuperation = $db->query('SELECT * FROM clients');
                 while ($client = $recuperation->fetch()) {
-                    echo "<form class='formclient' action='index.php'><div class='ficheclient1'> <h3>Fiche Client</h3> <input type='text' name='id_client' value='".$client['id_client_clients']."'>
+                    echo "<form class='formclient' action='index.php'><div class='ficheclient1'> <h3 style='margin-left:200px; margin-top:20px; font-size:1.3rem;' >Fiche Client</h3> <input style='margin-top:30px;' type='text' name='id_client' value='".$client['id_client_clients']."'>
                     <input type='text' name='nom' value='".$client['nom_clients']."'>
                     <input type='text' name='prenom' value='".$client['prenom_clients']."'>
                     <input type='text' name='adresse' value='".$client['adresse_clients']."'>
@@ -338,7 +338,7 @@ AFFICHER LES VOITURES -->
 ?>
 <?php                    
                     echo"<button type='submit' value='modifier' name='action'>Modifier</button>
-                    <button type='submit' value='supprimer' name='action'>Supprimer</button>
+                    <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
                     
                     </form>
                     

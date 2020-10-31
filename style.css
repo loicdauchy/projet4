@@ -235,7 +235,8 @@ input {
   flex-wrap: wrap;
   width: 80%;
   height: 100%;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background: url(image/fondCard.png);
+  background-size: cover;
   border : 1px solid white;
   border-radius: 50px 0px 50px 0px;
   box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
@@ -243,7 +244,7 @@ input {
 
 .formclient {
   width:30%;
-  height:50vh;
+  min-height:50vh;
   display: flex;
   justify-content: center;
   align-items: center;
