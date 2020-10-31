@@ -263,7 +263,7 @@ input {
     width: 50%;
   }
 }
-@media screen and (max-width : 780px) {
+@media screen and (max-width : 650px) {
   .formclient {
     width: 100%;
   }
