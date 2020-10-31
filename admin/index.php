@@ -45,9 +45,8 @@ include '../connect.php';
     </form>
     <br>
 <?php
-
-$recuperation = $db->query('SELECT * FROM louer');
-while ($louer = $recuperation->fetch()) {
+    $recuperation = $db->query('SELECT * FROM louer');   
+    while ($louer = $recuperation->fetch()) {
     echo "<form action='index.php'><div> <input type='text' name='id' value='".$louer['id_car_vehicules']."'>
     <input type='text' name='idClient' value='".$louer['id_client_clients']."'>
     <input type='date' name='dateloc' value='".$louer['date_louer']."'>
@@ -303,10 +302,12 @@ AFFICHER LES VOITURES -->
         <button type="submit" value="ajouter" name="action">Ajouter</button>
     </form>
 <br>
+</section>
+<section class="ficheclient">
 <?php
                 $recuperation = $db->query('SELECT * FROM clients');
                 while ($client = $recuperation->fetch()) {
-                    echo "<form action='index.php'><div> <input type='text' name='id_client' value='".$client['id_client_clients']."'>
+                    echo "<form class='formclient' action='index.php'><div class='ficheclient1'> <h3>Fiche Client</h3> <input type='text' name='id_client' value='".$client['id_client_clients']."'>
                     <input type='text' name='nom' value='".$client['nom_clients']."'>
                     <input type='text' name='prenom' value='".$client['prenom_clients']."'>
                     <input type='text' name='adresse' value='".$client['adresse_clients']."'>
@@ -331,7 +332,7 @@ AFFICHER LES VOITURES -->
                             echo "<input style='background:red;' type='text' name='late' value='En retard'>";
                         }else if($date >= $recup1['date_louer'] AND $date <= $recup1['date_fin']){
                             echo "<input style='background:green;' type='text' name='loc' value='En cours'>";
-                        }else{
+                        }else {
                             echo "<input style='background:blue;' type='text' name='pasLoc' value='Pas de location'>";
                         }
 ?>
@@ -368,6 +369,6 @@ AFFICHER LES VOITURES -->
     </div>
 
 </footer>
-</section>
+
 </body>
 </html>
