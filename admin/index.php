@@ -315,7 +315,7 @@ AFFICHER LES VOITURES -->
                     <input type='text' name='ville' value='".$client['ville_clients']."'>
                     <input type='text' name='mail' value='".$client['mail_clients']."'>";
 ?>
-                        <select name='carDejaLouer'>
+                        <select class='form-control' style='width:50%;' name='carDejaLouer'>
                         <option value=''> Voiture déjà loué </option>
 <?php
                         $recup = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
@@ -329,11 +329,11 @@ AFFICHER LES VOITURES -->
                         $recup1 = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
                         $recup1 = $recup1->fetch();
                         if ($date > $recup1['date_fin']){
-                            echo "<input style='background:red;' type='text' name='late' value='En retard'>";
+                            echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
                         }else if($date >= $recup1['date_louer'] AND $date <= $recup1['date_fin']){
-                            echo "<input style='background:green;' type='text' name='loc' value='En cours'>";
+                            echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
                         }else {
-                            echo "<input style='background:blue;' type='text' name='pasLoc' value='Pas de location'>";
+                            echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
                         }
 ?>
 <?php                    
