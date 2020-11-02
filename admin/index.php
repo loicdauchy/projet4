@@ -13,11 +13,11 @@ include '../connect.php';
     <title>hertz</title>
 </head>
 <body>
-<header>
+<header class="headeradmin">
 
         <div class="headerdiv">
             
-            <nav class="navbar navbar-expand-sm bg-white navbar-white">
+            <nav class="navbar navbar-expand-sm bg-light navbar-light">
                 <a class="navbar-brand" href="#">
                     <div class="logonavbar"><img src="../image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
                 </div>
@@ -25,10 +25,6 @@ include '../connect.php';
                <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
             </nav>
         </div>
-        <div class="schrolladmin" id="schroll">
-                <h2 class="schroll">Gestion</h2>
-                <a href="#registre"><img src="../image/down-arrow" width="80px" alt=""></a>
-            </div>
     </header>
     <section class="adminbody">
 <!-- AFFICHER LES LOCATIONS -->

@@ -6,7 +6,8 @@ html {
 .headerdiv{
     
 }
-header {
+
+.headermain{
     background: url(image/393302f1-2020-hertz-hendrick-motorsp.webp) fixed;
     background-size : cover;
     background-position:center;
@@ -70,7 +71,8 @@ font-weight: bold;
     background-color:gold;
 }
 .table{
- background-color: white;
+
+
 }
 th{
 
@@ -154,8 +156,8 @@ footer{
   }
 
   .dispo {
-      width: 20px;
-      margin-left: 25px;
+      width: 40px;
+      margin-left: 45px;
   }
 
   nav {
