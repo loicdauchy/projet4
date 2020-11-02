@@ -39,7 +39,7 @@ for($i=0;$i<count($idCarlouer);$i++){
     <title>hertz</title>
 </head>
 
-<body>
+<body class="bodymain">
     <header class="headermain">
         <div class="headerdiv">
             
@@ -147,13 +147,7 @@ for($i=0;$i<count($idCarlouer);$i++){
                             consectetur<br> adipisicing elit. Cum cumque ipsam necessitatibus quam, illum unde a?<br>
                             Veritatis sapiente saepe voluptatem.</p>
                     </div>
-                    <div class="connectadmin">
-                        <form action="login.php" method="POST">
-                        <input type="text" name="email" placeholder="Email">
-                        <input type="password" name="pass" placeholder="Mot de passe">
-                        <button class="btn btn-warning" type="submit" name="submit">Connexion Admin</button>
-
-                    </form></div>
+                    
                     
                    
                    
@@ -161,6 +155,13 @@ for($i=0;$i<count($idCarlouer);$i++){
             </div>
         
         </footer>
+        <center><div class="connectadmin">
+                        <form action="login.php" method="POST">
+                        <input type="text" name="email" placeholder="Email">
+                        <input type="password" name="pass" placeholder="Mot de passe">
+                        <button class="btn btn-warning" type="submit" name="submit">Connexion Admin</button>
+
+                    </form></div></center>
     </section>
 
 </body>

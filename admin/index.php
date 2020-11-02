@@ -1,6 +1,30 @@
 <?php
 include '../connect.php';
 ?>
+<?php session_start();
+?> 
+<?php
+$sql = 'SELECT * FROM `vehicules`';
+
+$query = $db->prepare($sql);
+
+$query->execute();
+
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+// $idCar = $db->query('SELECT id_car_vehicules FROM vehicules');
+// $idCar = $idCar->fetchAll();
+
+
+
+$idCarlouer = $db->query('SELECT id_car_vehicules FROM louer');
+$idCarlouer = $idCarlouer->fetchALL();
+
+for($i=0;$i<count($idCarlouer);$i++){
+    $vehiculesRechercher[]=$idCarlouer[$i]['id_car_vehicules'];
+}
+// var_dump($vehiculesRechercher);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,7 +36,7 @@ include '../connect.php';
     <link rel="stylesheet" href="../style.css">
     <title>hertz</title>
 </head>
-<body>
+<body class="adminbody">
 <header class="headeradmin">
 
         <div class="headerdiv">
@@ -26,11 +50,11 @@ include '../connect.php';
             </nav>
         </div>
     </header>
-    <section class="adminbody">
+    <center><section>
 <!-- AFFICHER LES LOCATIONS -->
 <div class="enregistrement container-fluid">
     
-<h3 id="registre">Enregistrement d'une location</h3>
+<h3 id="registre" >Enregistrement d'une location</h3>
 <hr>
     <form method='GET' action="index.php">
         <input type="text" name="id" placeholder="Référence de la voiture">
@@ -56,7 +80,7 @@ include '../connect.php';
 }
 
 ?>
-</section>
+</section></center>
 
 <?php
 include '../function.php';
@@ -103,7 +127,49 @@ include '../function.php';
 <!-- 
 AFFICHER LES VOITURES -->
 
-<center><h3>Nos voitures</h3><center>
+<div class="titretables">
+            <h2>Liste véhicule</h2>
+        </div>
+        
+        <div class="liste">
+            <table class="table">
+                <thead class="thead">
+                    <tr class="headtables">
+                        <th>Marque</th>
+                        <th>Modèle</th>
+                        <th>Année</th>
+                        <th>kilométrages</th>
+                        <th>Disponible</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach($result as $produits){                    
+                    ?>
+                    <tr>
+                        <td><?= $produits['marque_vehicules'] ?></td>
+                        <td><?= $produits['modele_vehicules'] ?></td>
+                        <td><?= $produits['annees_vehicules'] ?></td>
+                        <td><?= $produits['kilometrage_vehicules'] ?></td>
+                        <?php
+                        // echo $idCar[0]['id_car_vehicules'];
+                   if (in_array($produits['id_car_vehicules'],$vehiculesRechercher)){
+                       echo "<td> <img class='dispo' src='../image/close'> </td>";
+                       
+                   }else {
+                       echo "<td> <img class='dispo' src='../image/check'> </td>";
+                   }
+                    
+                    ?>
+                    </tr>
+                    <?php 
+                    }
+                    ?>
+
+                </tbody>
+            </table> 
+            
+        </div>
 <hr>
 
 <center><form style="width:20%;" action="index.php" method="GET">

@@ -68,10 +68,12 @@ font-weight: bold;
 }
 .headtables{
 
-    background-color:gold;
+    background-image: url("image/gold-2889417_1920.jpg");
 }
 .table{
 
+  background-color: white;
+  
 
 }
 th{
@@ -172,32 +174,50 @@ footer{
   
   }
   
+  
   .adminbody{
-    background-color:white;
+    
+    background-color: white;
     
   }
 
 
   .enregistrement.container-fluid{
-      
+
+
+   
     margin-top:10%;
 
   }
   input{
 
+    font-family: fantasy;
+    font-weight: bold;
+    text-align: center;
     border:none;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     box-shadow: black 2px 2px 2px;
+  }
+  text{
+
+    color: black !important;
+  }
+  .date{
+
+    color: black !important;
   }
   button{
     font-family: fantasy;
     display: inline-block;
     padding: 5px 10px;
-    background: gold;
+    background-image: url("image/gold-2889417_1920.jpg");
+    background-position: center;
     border: 1px solid black;
-    color: black;
-    text-shadow:goldenrod 2px 2px 2px;
     box-shadow: black 2px 2px 2px;
+  }
+  ::placeholder{
+
+    color: black !important;
   }
 
   hr{
@@ -218,9 +238,7 @@ footer{
   background-repeat: no-repeat;
 }
 
-input {
-  text-align: center;
-}
+
 
 .ficheclient {
   display: flex;
