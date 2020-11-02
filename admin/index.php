@@ -175,6 +175,7 @@ AFFICHER LES VOITURES -->
 ?> 
                         </select>
 <?php
+                        $late = 1 ;
                         $date = date("Y-m-d");
                         $recup1 = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
                         $recup1 = $recup1->fetch();
@@ -184,8 +185,10 @@ AFFICHER LES VOITURES -->
                             echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
                         }else if ($date < $recup1['date_louer'] AND $date < $recup1['date_fin']){
                             echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-                        }else{
+                        }else if ($late){
                             echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
+                        }else{
+
                         }
 ?>
 <?php                    
