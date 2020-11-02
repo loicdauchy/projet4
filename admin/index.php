@@ -56,7 +56,7 @@ include '../connect.php';
 }
 
 ?>
-
+</section>
 
 <?php
 include '../function.php';
@@ -71,7 +71,7 @@ include '../function.php';
     }
 
 // AJOUTER UN CLIENT
-    if(isset($_GET['action']) && $_GET['action']=="ajouter" && !empty($_GET['nom'])  && !empty($_GET['prenom'])  && !empty($_GET['adresse']) && !empty($_GET['cp']) && !empty($_GET['ville'])){      
+    if(isset($_GET['action']) && $_GET['action']=="ajouter" && !empty($_GET['nom'])  && !empty($_GET['prenom'])  && !empty($_GET['adresse']) && !empty($_GET['cp']) && !empty($_GET['ville']) && !empty($_GET['mail'])){      
       ajouterClient();
     }
 
@@ -103,28 +103,39 @@ include '../function.php';
 <!-- 
 AFFICHER LES VOITURES -->
 
-<h3>Nos voitures</h3>
+<center><h3>Nos voitures</h3><center>
 <hr>
-<p>Ajouter un nouveau véhicule</p>
-    <form method='GET' action="index.php">
-        <input type="text" name="marque" placeholder="Marque">
-        <input type="text" name="modele" placeholder="Modele">
-        <input type="date" name="annees" placeholder="Années">
-        <input type="text" name="kilometrage" placeholder="Klm">
-        <button type="submit" value="ajouter" name="action">Ajouter</button>
-    </form>
-<br>
+
+<center><form style="width:20%;" action="index.php" method="GET">
+                <h2 class="text-center">Ajouter un nouveau véhicule</h2>       
+                <div class="form-group">
+                    <input type="text" name="marque" class="form-control" placeholder="Marque">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="modele" class="form-control" placeholder="Modele">
+                </div>
+                <div class="form-group">
+                    <input type="date" name="annees" class="form-control" placeholder="Années">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="kilometrage" class="form-control" placeholder="Klm">
+                </div>
+                <div class="form-group">
+                    <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
+                </div>   
+            </form><center>
+<section class="ficheclient">
 <?php
                 $recuperation = $db->query('SELECT * FROM vehicules');
                 while ($vehicule = $recuperation->fetch()) {
-                    echo "<form action='index.php'><div> <input type='text' name='id' value='".$vehicule['id_car_vehicules']."'>
+                    echo "<form class='formclient' action='index.php'><div class='ficheclient1 fondVoiture'> <input style='margin-top:80px;' type='text' name='id' value='".$vehicule['id_car_vehicules']."'>
                     <input type='text' name='marque' value='".$vehicule['marque_vehicules']."'>
                     <input type='text' name='modele' value='".$vehicule['modele_vehicules']."'>
                     <input type='date' name='annees' value='".$vehicule['annees_vehicules']."'>
                     <input type='text' name='kilometrage' value='".$vehicule['kilometrage_vehicules']."'>
                     
                     <button type='submit' value='modifier' name='action'>Modifier</button>
-                    <button type='submit' value='supprimer' name='action'>Supprimer</button>
+                    <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
                     
                     </form>
                     
@@ -132,21 +143,42 @@ AFFICHER LES VOITURES -->
                 }
 ?>
 
-
+</section>
 
 <!-- INFORMATION CLIENTS -->
 
 <h3>Information Clients</h3>
 <hr>
-<p>Ajouter un nouveau Client</p>
-    <form method='GET' action="index.php">
-        <input type="text" name="nom" placeholder="Nom">
-        <input type="text" name="prenom" placeholder="Prénom">
-        <input type="text" name="adresse" placeholder="Adresse">
-        <input type="text" name="cp" placeholder="Code Postal">
-        <input type="text" name="ville" placeholder="Ville">
-        <button type="submit" value="ajouter" name="action">Ajouter</button>
-    </form>
+<center><form style="width:20%;"action="ajouterClient_traitement.php" method="post">
+                <h2 class="text-center">Ajouter un nouveau Client</h2>       
+                <div class="form-group">
+                    <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="prenom" class="form-control" placeholder="Prénom" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="adresse" class="form-control" placeholder="Adresse" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cp" class="form-control" placeholder="Code Postal" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ville" class="form-control" placeholder="Ville" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password_retype" class="form-control" placeholder="Re-tapez le mot de passe" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-warning btn-block">Ajouter</button>
+                </div>   
+            </form><center>
 <br>
 </section>
 <section class="ficheclient">
@@ -198,7 +230,7 @@ AFFICHER LES VOITURES -->
 ?>
 </div>
 </section>
-      <section>
+      
       
 <footer>
     <div class="container-fluid footer">
