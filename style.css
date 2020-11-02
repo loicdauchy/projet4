@@ -269,3 +269,8 @@ input {
   }
 }
 
+.fondVoiture {
+  background: url(image/ficheVoiture.png);
+  background-size: cover;
+}
+

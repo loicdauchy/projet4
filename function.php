@@ -41,7 +41,7 @@ function ajouterVoiture () {
 
 function ajouterClient () {
     include 'connect.php';
-    $ajouter = $db->prepare('INSERT INTO clients (nom_clients, prenom_clients, adresse_clients, cp_clients, ville_clients) VALUES (:nom, :prenom, :adresse, :cp, :ville)');
+    $ajouter = $db->prepare('INSERT INTO clients (nom_clients, prenom_clients, adresse_clients, cp_clients, ville_clients, mail_clients) VALUES (:nom, :prenom, :adresse, :cp, :ville, :mail)');
         $ajouter->bindParam(':nom', $_GET['nom'], 
         PDO::PARAM_STR);
         $ajouter->bindParam(':prenom', $_GET['prenom'], 
@@ -51,6 +51,8 @@ function ajouterClient () {
         $ajouter->bindParam(':cp', $_GET['cp'], 
         PDO::PARAM_STR);
         $ajouter->bindParam(':ville', $_GET['ville'], 
+        PDO::PARAM_STR);
+        $ajouter->bindParam(':mail', $_GET['mail'], 
         PDO::PARAM_STR);
         $estceok = $ajouter->execute();
         // $estceok->debugDumpParams();
