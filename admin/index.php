@@ -56,31 +56,75 @@ for($i=0;$i<count($idCarlouer);$i++){
     
 <h3 id="registre" >Enregistrement d'une location</h3>
 <hr>
-    <form method='GET' action="index.php">
-        <input type="text" name="id" placeholder="Référence de la voiture">
-        <input type="text" name="idClient" placeholder="Référence du client">
-        <input type="date" name="dateloc">
-        <input type="date" name="datefinloc">
-        <button type="submit" value="ajouter" name="action">Ajouter</button>
-    </form>
-    <br>
+
+<center><form style="width:20%;" action="index.php" method="GET">
+                <h2 class="text-center">Ajouter une nouvelle location</h2>       
+                <div class="form-group">
+                    <input type="text" name="id" class="form-control" placeholder="Référence de la voiture">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="idClient" class="form-control" placeholder="Référence du client">
+                </div>
+                <p>Du</p>
+                <div class="form-group">
+                    <input type="date" name="dateloc" class="form-control">
+                </div>
+                <p>Au</p>
+                <div class="form-group">
+                    <input type="date" name="datefinloc" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
+                </div>   
+            </form><center>
+<section class="ficheclient">
 <?php
-    $recuperation = $db->query('SELECT * FROM louer');   
-    while ($louer = $recuperation->fetch()) {
-    echo "<form action='index.php'><div> <input type='text' name='id' value='".$louer['id_car_vehicules']."'>
-    <input type='text' name='idClient' value='".$louer['id_client_clients']."'>
-    <input type='date' name='dateloc' value='".$louer['date_louer']."'>
-    <input type='date' name='datefinloc' value='".$louer['date_fin']."'>
+
+    $lister = $db->prepare('SELECT * FROM louer
+    INNER JOIN vehicules ON louer.id_car_vehicules = vehicules.id_car_vehicules
+    INNER JOIN clients ON louer.id_client_clients = clients.id_client_clients');
+    $lister->execute();
+    $lister = $lister->fetchALL(PDO::FETCH_ASSOC);
+    foreach($lister as $info) {
+        echo "<form class='formclient' action='index.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='"."ID Car : ".$info['id_car_vehicules']."'>
+        <input type='text' name='idClient' value='".$info['marque_vehicules']." ".$info['modele_vehicules']."'>
+        <input type='text' name='idClient' value='"."ID Client : ".$info['id_client_clients']."'>
+        <input type='text' name='idClient' value='".$info['nom_clients']." ".$info['prenom_clients']."'>
+        <input type='date' name='dateloc' value='".$info['date_louer']."'>
+        <input type='date' name='datefinloc' value='".$info['date_fin']."'>";
+?>
+<?php
+        $date = date("Y-m-d");
+        if ($date >= $info['date_fin']){
+            echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
+        }else if($date >= $info['date_louer'] AND $date <= $info['date_fin']){
+            echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
+        }else if ($date < $info['date_louer'] AND $date < $info['date_fin']){
+            echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
+        }else if ($late){
+            echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Location terminé'>";
+        }else{
+
+        }
+
+?>
+<?php    
+       echo "<button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
     
-    <button type='submit' value='supprimer' name='action'>Supprimer</button>
+        </form>
     
-    </form>
+        </div>";
+    }
     
-    </div>";
-}
+
 
 ?>
 </section></center>
+
+
+
+
+
 
 <?php
 include '../function.php';
@@ -123,6 +167,11 @@ include '../function.php';
       modifierClient();         
     }
 ?>               
+
+
+
+
+
 
 <!-- 
 AFFICHER LES VOITURES -->
