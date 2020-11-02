@@ -39,18 +39,26 @@ for($i=0;$i<count($idCarlouer);$i++){
 <body class="adminbody">
 <header class="headeradmin">
 
-        <div class="headerdiv">
+        <div class="headerdivadmin">
             
-            <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <nav class="navbar navbar-expand-sm bg-white navbar-white">
                 <a class="navbar-brand" href="#">
                     <div class="logonavbar"><img src="../image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
                 </div>
                 </a>
+                
                <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
-            </nav>
+               
+            </nav> <div class="schrollaccueil" id="schroll">
+                <h2 class="schroll">Gestionnaire</h2>
+                
+                <a href="#registre"><img src="../image/down-arrow" width="80px"  alt=""></a>
         </div>
+        </div>
+       
     </header>
-    <center><section>
+   
+    <center><section class="admintop">
 <!-- AFFICHER LES LOCATIONS -->
 <div class="enregistrement container-fluid">
     
@@ -58,7 +66,8 @@ for($i=0;$i<count($idCarlouer);$i++){
 <hr>
 
 <center><form style="width:20%;" action="index.php" method="GET">
-                <h2 class="text-center">Ajouter une nouvelle location</h2>       
+                <h2 class="text-center">Ajouter une nouvelle location</h2>    
+                <hr>   
                 <div class="form-group">
                     <input type="text" name="id" class="form-control" placeholder="Référence de la voiture">
                 </div>
@@ -77,6 +86,7 @@ for($i=0;$i<count($idCarlouer);$i++){
                     <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center>
+</section>
 <section class="ficheclient">
 <?php
 
@@ -176,9 +186,10 @@ include '../function.php';
 <!-- 
 AFFICHER LES VOITURES -->
 
-<div class="titretables">
+<center><div class="titretables">
             <h2>Liste véhicule</h2>
-        </div>
+            <hr>
+        </div></center>
         
         <div class="liste">
             <table class="table">
@@ -219,10 +230,10 @@ AFFICHER LES VOITURES -->
             </table> 
             
         </div>
-<hr>
 
 <center><form style="width:20%;" action="index.php" method="GET">
-                <h2 class="text-center">Ajouter un nouveau véhicule</h2>       
+                <h2 class="text-center">Ajouter un nouveau véhicule</h2>   
+                <hr>    
                 <div class="form-group">
                     <input type="text" name="marque" class="form-control" placeholder="Marque">
                 </div>
@@ -283,7 +294,8 @@ AFFICHER LES VOITURES -->
 <h3>Information Clients</h3>
 <hr>
 <center><form style="width:20%;"action="ajouterClient_traitement.php" method="post">
-                <h2 class="text-center">Ajouter un nouveau Client</h2>       
+                <h2 class="text-center">Ajouter un nouveau Client</h2>    
+                <hr>   
                 <div class="form-group">
                     <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
                 </div>

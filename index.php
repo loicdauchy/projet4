@@ -80,12 +80,13 @@ for($i=0;$i<count($idCarlouer);$i++){
             </nav>
         <div class="schrollaccueil" id="schroll">
                 <h2 class="schroll">Voir nos véhicules</h2>
+                
                 <a href="#vehiculesList container-fluid"><img src="image/down-arrow" width="80px"  alt=""></a>
         </div>
     </header >
     <section id="vehiculesList container-fluid">
         <div class="titretables">
-            <h2>Liste véhicule</h2>
+            <center><h2>Liste véhicule</h2></center>
         </div>
         
         <div class="liste">
@@ -142,7 +143,7 @@ for($i=0;$i<count($idCarlouer);$i++){
                             width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
                             aria-hidden="false" tabindex="0"></iframe>
                     </div> <div class="info col-12 col-md-6">
-                        <p>Lorem ipsum dolor<br> sit amet consectetur, adipisicing elit. A minus maxime alias incidunt
+                        <p class="textinfo">Lorem ipsum dolor<br> sit amet consectetur, adipisicing elit. A minus maxime alias incidunt
                             suscipit aspernatur expedita nisi tempora autem<br> assumenda. Lorem ipsum, dolor sit amet
                             consectetur<br> adipisicing elit. Cum cumque ipsam necessitatibus quam, illum unde a?<br>
                             Veritatis sapiente saepe voluptatem.</p>
