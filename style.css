@@ -274,3 +274,8 @@ input {
   background-size: cover;
 }
 
+.fondLocation {
+  background: url(image/ficheLocation.png);
+  background-size: cover;
+}
+
