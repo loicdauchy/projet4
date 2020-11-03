@@ -41,7 +41,7 @@ for($i=0;$i<count($idCarlouer);$i++){
 
 <body class="bodymain">
     <header class="headermain">
-        <div class="headerdiv">
+        <div class="headerdivmain">
             
             <nav class="navbar navbar-expand-sm bg-white navbar-white">
                 <a class="navbar-brand" href="#">
@@ -67,15 +67,7 @@ for($i=0;$i<count($idCarlouer);$i++){
                 <button class="btn btn-warning" type="submit" name="submit">Connexion</button>
 
                 </form>
-
-                
-
-                
-            
-            
-           
-            
-        </div>
+        </div> 
 
             </nav>
         <div class="schrollaccueil" id="schroll">

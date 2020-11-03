@@ -49,13 +49,13 @@ for($i=0;$i<count($idCarlouer);$i++){
                 
                <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
                
-            </nav> <div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Gestionnaire</h2>
+            </nav>
+        </div>
+        <div class="schrollaccueil" id="schroll">
+                <h2 class="schroll">Voir nos véhicules</h2>
                 
-                <a href="#registre"><img src="../image/down-arrow" width="80px"  alt=""></a>
+                <a href="#vehiculesList container-fluid"><img src="image/down-arrow" width="80px"  alt=""></a>
         </div>
-        </div>
-       
     </header>
    
     <center><section class="admintop">
