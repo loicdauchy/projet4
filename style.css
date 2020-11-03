@@ -3,7 +3,7 @@ html {
     overflow-y: scroll;
   }
 
-header{
+.headermain{
   background: url(image/393302f1-2020-hertz-hendrick-motorsp.webp) fixed;
   background-size : cover;
   background-position:center;
@@ -14,7 +14,7 @@ h1{
     font-family:fantasy;
     font-weight: bold !important;
     font-size: 150px;
-    text-shadow: black 2px 2px 2px;
+    text-shadow: black 3px 3px 3px;
     bottom: 100px;
     color: gold;
     position: absolute;
@@ -128,7 +128,7 @@ footer{
 
 .info{
 
-  background-image: ;
+  
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -147,6 +147,7 @@ footer{
     align-items: center;
     
   }
+
   .schrollaccueil{
     top: 0 !important;
     
@@ -193,7 +194,7 @@ footer{
     font-weight: bold;
     text-align: center;
     border:none;
-    background-color: white;
+    background-color: whitesmoke;
     box-shadow: black 2px 2px 2px;
   }
   .form-control{
@@ -229,7 +230,7 @@ footer{
   }
 
  body{
-  background-color:whitesmoke;
+  background-color:white;
 
  }
  

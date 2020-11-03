@@ -40,7 +40,7 @@ for($i=0;$i<count($idCarlouer);$i++){
 </head>
 
 <body class="bodymain">
-    <header>
+    <header class="headermain">
         <div class="headerdivmain">
             
             <nav class="navbar navbar-expand-sm bg-white navbar-white">
