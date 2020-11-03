@@ -49,7 +49,11 @@ for($i=0;$i<count($idCarlouer);$i++){
                 
                <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
                
-            </nav>
+            </nav><div class="schrollaccueil" id="schroll">
+                <h2 class="schroll">Gestionnaire administrateur</h2>
+                
+                <a href="#registre"><img src="../image/down-arrow" width="80px"  alt=""></a>
+        </div>
         </div>
     </header>
    
