@@ -40,7 +40,7 @@ for($i=0;$i<count($idCarlouer);$i++){
 </head>
 
 <body class="bodymain">
-    <header class="headermain">
+    <header>
         <div class="headerdivmain">
             
             <nav class="navbar navbar-expand-sm bg-white navbar-white">
@@ -69,12 +69,12 @@ for($i=0;$i<count($idCarlouer);$i++){
                 </form>
         </div> 
 
-            </nav>
-        <div class="schrollaccueil" id="schroll">
+            </nav><div class="schrollaccueil" id="schroll">
                 <h2 class="schroll">Voir nos véhicules</h2>
                 
                 <a href="#vehiculesList container-fluid"><img src="image/down-arrow" width="80px"  alt=""></a>
         </div>
+        
     </header >
     <section id="vehiculesList container-fluid">
         <div class="titretables">

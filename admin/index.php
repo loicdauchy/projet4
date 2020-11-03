@@ -51,11 +51,6 @@ for($i=0;$i<count($idCarlouer);$i++){
                
             </nav>
         </div>
-        <div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Voir nos véhicules</h2>
-                
-                <a href="#vehiculesList container-fluid"><img src="image/down-arrow" width="80px"  alt=""></a>
-        </div>
     </header>
    
     <center><section class="admintop">
