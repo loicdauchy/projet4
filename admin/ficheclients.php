@@ -61,7 +61,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         </div>
         </div>
     </header>
-<section id="ficheclient" class="ficheclient">
+<section id="ficheclient" class="ficheclient" style="margin-top:5%;">
 <h3>Information Clients</h3>
 <?php
                 $recuperation = $db->query('SELECT * FROM clients');
