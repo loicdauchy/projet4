@@ -62,7 +62,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         </div>
     </header>
 <section class="ficheclient">
-<h3>Fiche locations</h3>
+<h3 >Fiche locations</h3>
 
 <?php
 

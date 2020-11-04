@@ -63,12 +63,12 @@ for($i=0;$i<count($idCarlouer);$i++){
     <center><section class="admintop">
 <!-- AFFICHER LES LOCATIONS -->
 <div class="enregistrement container-fluid">
-    <hr>
-<h3 id="registre" >Enregistrement d'une location</h3>
-<hr>
+    
+<h3 id="registre"><hr>Enregistrement d'une location<hr></h3>
 
-<center><form class="formAdd" style="width:20%;" action="index.php" method="GET">
-                <h2 class="text-center">Ajouter une nouvelle location</h2>
+
+<center><form class="formAdd" style="width:20%; margin-top:5%;" action="index.php" method="GET">
+                <h2 class="text-center" style="margin-top:5%;"><hr>Ajouter une nouvelle location</h2>
                 <hr>       
                 <div class="form-group">
                     <input type="text" name="id" class="form-control" placeholder="Référence de la voiture">
@@ -152,8 +152,8 @@ include '../function.php';
 
 
 
-<center><form class="formAdd" style="width:20%;" action="index.php" method="GET">
-                <h2 class="text-center">Ajouter un nouveau véhicule</h2> 
+<center><form class="formAdd" style="width:20%; margin-top:5%;" action="index.php" method="GET">
+                <h2 class="text-center"><hr>Ajouter un nouveau véhicule</h2> 
                 <hr>      
                 <div class="form-group">
                     <input type="text" name="marque" class="form-control" placeholder="Marque">
@@ -171,15 +171,16 @@ include '../function.php';
                     <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center>
+                
 
 <!-- INFORMATION CLIENTS -->
 
 
-<hr>
-<center><form class="formAdd" style="width:20%;"action="ajouterClient_traitement.php" method="post">
-                <h2 class="text-center">Ajouter un nouveau Client</h2>  
+
+<center><form class="formAdd" style="width:20%; margin-top:5%;"action="ajouterClient_traitement.php" method="post">
+                <h2 class="text-center" style="margin-top:5%;"><hr>Ajouter un nouveau Client</h2>  
                 <hr>     
-                <div class="form-group">
+                <div class="form-group" style="margin-top:5%;">
                     <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
                 </div>
                 <div class="form-group">
@@ -207,18 +208,18 @@ include '../function.php';
                     <button type="submit" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center> 
-                <hr>
+                
             <!-- 
 AFFICHER LES VOITURES -->
 
 <center><div class="titretables">
-            <h2>Liste véhicule</h2>
+            <h2 style="margin-top:5%;"><hr>Liste véhicule</h2>
             <hr>
             
         </div></center>
         
         <div class="liste">
-            <table class="table">
+            <table class="table" style="margin-top:5%;">
                 <thead class="thead">
                     <tr class="headtables">
                         <th>Marque</th>
