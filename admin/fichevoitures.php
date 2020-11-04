@@ -66,37 +66,28 @@ for($i=0;$i<count($idCarlouer);$i++){
 <?php
                 $recuperation = $db->query('SELECT * FROM vehicules');
                 while ($vehicule = $recuperation->fetch()) {
-                    echo "<form class='formclient' action='index.php'><div class='ficheclient1 fondVoiture'> <input style='margin-top:80px;' type='text' name='id' value='".$vehicule['id_car_vehicules']."'>
+                    echo "<form class='formclient' action='fichevoitures.php'><div class='ficheclient1 fondVoiture'> <input style='margin-top:80px;' type='text' name='id' value='".$vehicule['id_car_vehicules']."'>
                     <input type='text' name='marque' value='".$vehicule['marque_vehicules']."'>
                     <input type='text' name='modele' value='".$vehicule['modele_vehicules']."'>
                     <input type='date' name='annees' value='".$vehicule['annees_vehicules']."'>
-                    <input type='text' name='kilometrage' value='".$vehicule['kilometrage_vehicules']."'>";
-?>
-<?php
-                    $late = 1 ;
-                    $date = date("Y-m-d");
-                    $recup2 = $db->query('SELECT * FROM louer WHERE id_car_vehicules ='.$vehicule['id_car_vehicules'].'');
-                    $recup2 = $recup2->fetch();
-                    if ($date >= $recup2['date_fin']){
-                        echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-                    }else if($date >= $recup2['date_louer'] AND $date <= $recup2['date_fin']){
-                        echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-                    }else if ($date < $recup2['date_louer'] AND $date < $recup2['date_fin']){
-                        echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-                    }else if ($late){
-                        echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
-                    }else{
-
-                    }
-?>
-<?php                    
-                    echo"<button type='submit' value='modifier' name='action'>Modifier</button>
+                    <input type='text' name='kilometrage' value='".$vehicule['kilometrage_vehicules']."'>
+                
+                    <button style='margin-bottom:10px; margin-top:10px;' type='submit' value='modifier' name='action'>Modifier</button>
                     <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
                     
                     </form>
                     
                     </div>";
                 }
+include '../function.php';
+// SUPPRIMER UNE VOITURE
+if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id'])){    
+    supprimerVoiture(); 
+  }
+// MODIFIER UNE VOITURE
+if(isset($_GET['action']) && $_GET['action']=="modifier"  && !empty($_GET['id'])  && !empty($_GET['marque'])  && !empty($_GET['modele']) && !empty($_GET['annees']) && !empty($_GET['kilometrage'])){
+    modifierVoiture();          
+  }
 ?>
 
 </section>

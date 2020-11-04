@@ -72,7 +72,7 @@ for($i=0;$i<count($idCarlouer);$i++){
     $lister->execute();
     $lister = $lister->fetchALL(PDO::FETCH_ASSOC);
     foreach($lister as $info) {
-        echo "<form class='formclient' method='GET' action='index.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='"."ID Car : ".$info['id_car_vehicules']."'>
+        echo "<form class='formclient' method='GET' action='fichelocations.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='".$info['id_car_vehicules']."'>
         <input type='text' name='mmCar' value='".$info['marque_vehicules']." ".$info['modele_vehicules']."'>
         <input type='text' name='idClient' value='"."ID Client : ".$info['id_client_clients']."'>
         <input type='text' name='npClient' value='".$info['nom_clients']." ".$info['prenom_clients']."'>
@@ -80,8 +80,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         <input type='date' name='datefinloc' value='".$info['date_fin']."'>
         <label for='2'>Mettre fin à la location</label>
         <input style='margin-bottom:10px;' type='radio' name='plusEnLoc' value='2'>"; 
-?>
-<?php
+
         $date = date("Y-m-d");
         if ($info['enLoc'] == 2){
             echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Location terminé'>";        
@@ -94,9 +93,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         } else{
 
         }
-    
-?>
-<?php    
+   
        echo "<button style='margin-bottom:10px; margin-top:10px;' type='submit' value='modifier' name='action'>Modifier</button>
        <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
     
@@ -105,13 +102,15 @@ for($i=0;$i<count($idCarlouer);$i++){
         </div>";
     }
     
-
-
-
-
-
-
-
+include '../function.php';
+// SUPPRIMER UNE LOCATION
+if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id'])){     
+    supprimerLocation();       
+  }
+  // MODIFIER UNE LOCATION 
+  if(isset($_GET['action']) && $_GET['action']=="modifier" && !empty($_GET['plusEnLoc'])){
+    finLocation();   
+  }
 ?>
 </section></center>
 </body>

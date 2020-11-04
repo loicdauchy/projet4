@@ -66,7 +66,7 @@ for($i=0;$i<count($idCarlouer);$i++){
 <?php
                 $recuperation = $db->query('SELECT * FROM clients');
                 while ($client = $recuperation->fetch()) {
-                    echo "<form class='formclient' action='index.php'><div class='ficheclient1'> <input style='margin-top:80px;' type='text' name='id_client' value='".$client['id_client_clients']."'>
+                    echo "<form class='formclient' action='ficheclients.php'><div class='ficheclient1'> <input style='margin-top:80px;' type='text' name='id_client' value='".$client['id_client_clients']."'>
                     <input type='text' name='nom' value='".$client['nom_clients']."'>
                     <input type='text' name='prenom' value='".$client['prenom_clients']."'>
                     <input type='text' name='adresse' value='".$client['adresse_clients']."'>
@@ -83,31 +83,24 @@ for($i=0;$i<count($idCarlouer);$i++){
                     }
 ?> 
                         </select>
-<?php
-                        $late = 1 ;
-                        $date = date("Y-m-d");
-                        $recup1 = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
-                        $recup1 = $recup1->fetch();
-                        if ($date >= $recup1['date_fin']){
-                            echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-                        }else if($date >= $recup1['date_louer'] AND $date <= $recup1['date_fin']){
-                            echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-                        }else if ($date < $recup1['date_louer'] AND $date < $recup1['date_fin']){
-                            echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-                        }else if ($late){
-                            echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
-                        }else{
 
-                        }
-?>
 <?php                    
-                    echo"<button type='submit' value='modifier' name='action'>Modifier</button>
+                    echo"<button style='margin-bottom:10px; margin-top:10px;' type='submit' value='modifier' name='action'>Modifier</button>
                     <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
                     
                     </form>
                     
                     </div>";  
                 }
+include '../function.php';
+// SUPPRIMER UN CLIENT
+if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id_client'])){   
+    supprimerClient();     
+  }
+// MODIFIER UN CLIENT
+if(isset($_GET['action']) && $_GET['action']=="modifier"  && !empty($_GET['nom'])  && !empty($_GET['prenom'])  && !empty($_GET['adresse']) && !empty($_GET['cp']) && !empty($_GET['ville'])){
+    modifierClient();         
+  }
 ?>
 </div>
 </section>

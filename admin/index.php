@@ -111,33 +111,6 @@ include '../function.php';
       ajouterClient();
     }
 
-// SUPPRIMER UNE VOITURE
-    if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id'])){    
-      supprimerVoiture(); 
-    }
-// SUPPRIMER UN CLIENT
-    if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id_client'])){   
-      supprimerClient();     
-    }
-
-// SUPPRIMER UNE LOCATION
-    if(isset($_GET['action']) && $_GET['action']=="supprimer" && !empty($_GET['id'])){     
-      supprimerLocation();       
-    }
-
-// MODIFIER UNE VOITURE
-    if(isset($_GET['action']) && $_GET['action']=="modifier"  && !empty($_GET['id'])  && !empty($_GET['marque'])  && !empty($_GET['modele']) && !empty($_GET['annees']) && !empty($_GET['kilometrage'])){
-      modifierVoiture();          
-    }
-
-// MODIFIER UN CLIENT
-    if(isset($_GET['action']) && $_GET['action']=="modifier"  && !empty($_GET['nom'])  && !empty($_GET['prenom'])  && !empty($_GET['adresse']) && !empty($_GET['cp']) && !empty($_GET['ville'])){
-      modifierClient();         
-    }
-
-    if(isset($_GET['action']) && $_GET['action']=="modifier" && !empty($_GET['plusEnLoc'])){
-      finLocation();   
-    }
 ?>               
 
 
