@@ -61,11 +61,7 @@ text-shadow: black 2px 2px 2px;
     width: 100%;
     
 }
-.titretables{
 
-    
-    
-}
 .headtables{
 
     background-image: url("image/gold-2889417_1920.jpg");
@@ -73,9 +69,47 @@ text-shadow: black 2px 2px 2px;
 .table{
 
   background-color: rgba(255, 255, 255, 0);
- 
-  
+  overflow-x: auto;
+  width: 35%;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
 
+@media (max-width:1450px) {
+  .table {
+    width: 40%;
+  }
+}
+@media (max-width:1200px) {
+  .table {
+    width: 45%;
+  }
+}
+@media (max-width:1100px) {
+  .table {
+    width: 50%;
+  }
+}
+@media (max-width:1000px) {
+  .table {
+    width: 60%;
+  }
+}
+@media (max-width:796px) {
+  .table {
+    width: 70%;
+  }
+}
+@media (max-width:691px) {
+  .table {
+    width: 80%;
+  }
+}
+@media (max-width:610px) {
+  .table {
+    width: 100%;
+  }
 }
 th{
 
