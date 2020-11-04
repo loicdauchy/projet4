@@ -57,7 +57,7 @@ for($i=0;$i<count($idCarlouer);$i++){
 <h3 id="registre" >Enregistrement d'une location</h3>
 <hr>
 
-<center><form style="width:20%;" action="index.php" method="GET">
+<center><form class="formAdd" style="width:20%;" action="index.php" method="GET">
                 <h2 class="text-center">Ajouter une nouvelle location</h2>       
                 <div class="form-group">
                     <input type="text" name="id" class="form-control" placeholder="Référence de la voiture">
@@ -74,6 +74,10 @@ for($i=0;$i<count($idCarlouer);$i++){
                     <input type="date" name="datefinloc" class="form-control">
                 </div>
                 <div class="form-group">
+                    <label for="1">Début de la location</label>
+                    <input style="border:none; box-shadow:none;" type="radio" name="enLoc" value="1" class="form-control">               
+                </div>
+                <div class="form-group">
                     <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center>
@@ -86,30 +90,33 @@ for($i=0;$i<count($idCarlouer);$i++){
     $lister->execute();
     $lister = $lister->fetchALL(PDO::FETCH_ASSOC);
     foreach($lister as $info) {
-        echo "<form class='formclient' action='index.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='"."ID Car : ".$info['id_car_vehicules']."'>
-        <input type='text' name='idClient' value='".$info['marque_vehicules']." ".$info['modele_vehicules']."'>
+        echo "<form class='formclient' method='GET' action='index.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='"."ID Car : ".$info['id_car_vehicules']."'>
+        <input type='text' name='mmCar' value='".$info['marque_vehicules']." ".$info['modele_vehicules']."'>
         <input type='text' name='idClient' value='"."ID Client : ".$info['id_client_clients']."'>
-        <input type='text' name='idClient' value='".$info['nom_clients']." ".$info['prenom_clients']."'>
+        <input type='text' name='npClient' value='".$info['nom_clients']." ".$info['prenom_clients']."'>
         <input type='date' name='dateloc' value='".$info['date_louer']."'>
-        <input type='date' name='datefinloc' value='".$info['date_fin']."'>";
+        <input type='date' name='datefinloc' value='".$info['date_fin']."'>
+        <label for='2'>Mettre fin à la location</label>
+        <input style='margin-bottom:10px;' type='radio' name='plusEnLoc' value='2'>"; 
 ?>
 <?php
         $date = date("Y-m-d");
-        if ($date >= $info['date_fin']){
+        if ($info['enLoc'] == 2){
+            echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Location terminé'>";        
+        }else if ($date >= $info['date_fin'] AND $info['enLoc'] == 1){
             echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-        }else if($date >= $info['date_louer'] AND $date <= $info['date_fin']){
+        }else if($date >= $info['date_louer'] AND $date <= $info['date_fin'] AND $info['enLoc'] == 1){
             echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-        }else if ($date < $info['date_louer'] AND $date < $info['date_fin']){
+        }else if ($date < $info['date_louer'] AND $date < $info['date_fin'] AND $info['enLoc'] == 1){
             echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-        }else if ($late){
-            echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Location terminé'>";
-        }else{
+        } else{
 
         }
-
+    
 ?>
 <?php    
-       echo "<button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
+       echo "<button style='margin-bottom:10px; margin-top:10px;' type='submit' value='modifier' name='action'>Modifier</button>
+       <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
     
         </form>
     
@@ -129,7 +136,7 @@ for($i=0;$i<count($idCarlouer);$i++){
 <?php
 include '../function.php';
 // AJOUTER UNE LOCATION
-    if(isset($_GET['action']) && $_GET['action']=="ajouter" && !empty($_GET['id'])  && !empty($_GET['idClient']) && !empty($_GET['dateloc']) && !empty($_GET['datefinloc'])){     
+    if(isset($_GET['action']) && $_GET['action']=="ajouter" && !empty($_GET['id'])  && !empty($_GET['idClient']) && !empty($_GET['dateloc']) && !empty($_GET['datefinloc']) && !empty($_GET['enLoc'])){     
       ajouterLocation();
     }
     
@@ -165,6 +172,15 @@ include '../function.php';
 // MODIFIER UN CLIENT
     if(isset($_GET['action']) && $_GET['action']=="modifier"  && !empty($_GET['nom'])  && !empty($_GET['prenom'])  && !empty($_GET['adresse']) && !empty($_GET['cp']) && !empty($_GET['ville'])){
       modifierClient();         
+    }
+
+    if(isset($_GET['action']) && $_GET['action']=="modifier" && !empty($_GET['plusEnLoc'])){
+    //   finLocation();
+    $modifier = $db->prepare('UPDATE louer SET enLoc = :enLoc WHERE id_car_vehicules ='.$info['id_car_vehicules'].'');
+                $modifier->bindParam(':enLoc', $_GET['plusEnLoc'], PDO::PARAM_STR);
+                $modifier = $modifier->execute();
+                var_dump($modifier);
+                echo"toto";
     }
 ?>               
 
@@ -221,7 +237,7 @@ AFFICHER LES VOITURES -->
         </div>
 <hr>
 
-<center><form style="width:20%;" action="index.php" method="GET">
+<center><form class="formAdd" style="width:20%;" action="index.php" method="GET">
                 <h2 class="text-center">Ajouter un nouveau véhicule</h2>       
                 <div class="form-group">
                     <input type="text" name="marque" class="form-control" placeholder="Marque">
@@ -282,7 +298,7 @@ AFFICHER LES VOITURES -->
 
 <h3>Information Clients</h3>
 <hr>
-<center><form style="width:20%;"action="ajouterClient_traitement.php" method="post">
+<center><form class="formAdd" style="width:20%;"action="ajouterClient_traitement.php" method="post">
                 <h2 class="text-center">Ajouter un nouveau Client</h2>       
                 <div class="form-group">
                     <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
