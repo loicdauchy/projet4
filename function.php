@@ -141,17 +141,11 @@ function modifierClient () {
                     }
 }
 
-// function finLocation () {
-//     include 'connect.php';
-//     $modifier = $db->prepare('UPDATE louer SET enLoc = :enLoc WHERE id_car_vehicules ='.$info['id_car_vehicules'].'');
-//                 $modifier->bindParam(':enLoc', $_GET['plusEnLoc'], PDO::PARAM_STR);
-//                 $modifier = $modifier->execute();
-//                 print_r($modifier);
-//                 if($modifier){
-//                     echo 'votre enregistrement a bien été modifié';                  
-//                 } else {
-//                     echo 'Veuillez recommencer svp, une erreur est survenue';
-//                 }
-// }
+ function finLocation () {
+     include 'connect.php';
+     $modifier = $db->prepare('UPDATE louer SET enLoc = :enLoc WHERE id_car_vehicules ='.$_GET['id'].'');
+                 $modifier->bindParam(':enLoc', $_GET['plusEnLoc'], PDO::PARAM_STR);
+                 $modifier->execute();
+ }
 
 ?>

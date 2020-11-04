@@ -90,7 +90,7 @@ for($i=0;$i<count($idCarlouer);$i++){
     $lister->execute();
     $lister = $lister->fetchALL(PDO::FETCH_ASSOC);
     foreach($lister as $info) {
-        echo "<form class='formclient' method='GET' action='index.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='"."ID Car : ".$info['id_car_vehicules']."'>
+        echo "<form class='formclient' method='GET' action='index.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='".$info['id_car_vehicules']."'>
         <input type='text' name='mmCar' value='".$info['marque_vehicules']." ".$info['modele_vehicules']."'>
         <input type='text' name='idClient' value='"."ID Client : ".$info['id_client_clients']."'>
         <input type='text' name='npClient' value='".$info['nom_clients']." ".$info['prenom_clients']."'>
@@ -98,8 +98,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         <input type='date' name='datefinloc' value='".$info['date_fin']."'>
         <label for='2'>Mettre fin à la location</label>
         <input style='margin-bottom:10px;' type='radio' name='plusEnLoc' value='2'>"; 
-?>
-<?php
+
         $date = date("Y-m-d");
         if ($info['enLoc'] == 2){
             echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Location terminé'>";        
@@ -112,9 +111,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         } else{
 
         }
-    
-?>
-<?php    
+   
        echo "<button style='margin-bottom:10px; margin-top:10px;' type='submit' value='modifier' name='action'>Modifier</button>
        <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
     
@@ -175,12 +172,7 @@ include '../function.php';
     }
 
     if(isset($_GET['action']) && $_GET['action']=="modifier" && !empty($_GET['plusEnLoc'])){
-    //   finLocation();
-    $modifier = $db->prepare('UPDATE louer SET enLoc = :enLoc WHERE id_car_vehicules ='.$info['id_car_vehicules'].'');
-                $modifier->bindParam(':enLoc', $_GET['plusEnLoc'], PDO::PARAM_STR);
-                $modifier = $modifier->execute();
-                var_dump($modifier);
-                echo"toto";
+      finLocation();   
     }
 ?>               
 
@@ -263,27 +255,9 @@ AFFICHER LES VOITURES -->
                     <input type='text' name='marque' value='".$vehicule['marque_vehicules']."'>
                     <input type='text' name='modele' value='".$vehicule['modele_vehicules']."'>
                     <input type='date' name='annees' value='".$vehicule['annees_vehicules']."'>
-                    <input type='text' name='kilometrage' value='".$vehicule['kilometrage_vehicules']."'>";
-?>
-<?php
-                    $late = 1 ;
-                    $date = date("Y-m-d");
-                    $recup2 = $db->query('SELECT * FROM louer WHERE id_car_vehicules ='.$vehicule['id_car_vehicules'].'');
-                    $recup2 = $recup2->fetch();
-                    if ($date >= $recup2['date_fin']){
-                        echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-                    }else if($date >= $recup2['date_louer'] AND $date <= $recup2['date_fin']){
-                        echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-                    }else if ($date < $recup2['date_louer'] AND $date < $recup2['date_fin']){
-                        echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-                    }else if ($late){
-                        echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
-                    }else{
-
-                    }
-?>
-<?php                    
-                    echo"<button type='submit' value='modifier' name='action'>Modifier</button>
+                    <input type='text' name='kilometrage' value='".$vehicule['kilometrage_vehicules']."'>
+                 
+                    <button style='margin-bottom:10px; margin-top:10px;' type='submit' value='modifier' name='action'>Modifier</button>
                     <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
                     
                     </form>
@@ -351,25 +325,9 @@ AFFICHER LES VOITURES -->
                     }
 ?> 
                         </select>
-<?php
-                        $late = 1 ;
-                        $date = date("Y-m-d");
-                        $recup1 = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
-                        $recup1 = $recup1->fetch();
-                        if ($date >= $recup1['date_fin']){
-                            echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-                        }else if($date >= $recup1['date_louer'] AND $date <= $recup1['date_fin']){
-                            echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-                        }else if ($date < $recup1['date_louer'] AND $date < $recup1['date_fin']){
-                            echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-                        }else if ($late){
-                            echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
-                        }else{
 
-                        }
-?>
 <?php                    
-                    echo"<button type='submit' value='modifier' name='action'>Modifier</button>
+                    echo"<button style='margin-bottom:10px; margin-top:10px;' type='submit' value='modifier' name='action'>Modifier</button>
                     <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
                     
                     </form>
