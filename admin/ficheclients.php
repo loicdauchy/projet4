@@ -54,9 +54,9 @@ for($i=0;$i<count($idCarlouer);$i++){
                <a href="http://localhost/projet4/admin/index.php"><button  class="btn btn-warning" type="redirect" name="redirect">page admin</button></a>
                
             </nav><div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Gestionnaire administrateur</h2>
+                <h2 class="schroll">Clients</h2>
                 
-                <a href="#ficheclient"><img src="../image/down-arrow" width="80px"  alt=""></a>
+                <a href="#ficheclient"><img src="../image/man-303792_1280" width="80px"  alt=""></a>
         </div>
         </div>
     </header>

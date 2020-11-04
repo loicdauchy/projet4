@@ -52,9 +52,9 @@ for($i=0;$i<count($idCarlouer);$i++){
                <a href="http://localhost/projet4/admin/fichevoitures.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches voitures</button></a>
                <a href="http://localhost/projet4/admin/fichelocations.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches locations</button></a>
             </nav><div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Gestionnaire administrateur</h2>
+                <h2 class="schroll">Admin</h2>
                 
-                <a href="#registre"><img src="../image/down-arrow" width="80px"  alt=""></a>
+                <a href="#registre"><img src="../image/preferences-155386_1280" width="80px"  alt=""></a>
         </div>
         </div>
     </header>
@@ -87,6 +87,7 @@ for($i=0;$i<count($idCarlouer);$i++){
                     <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center>
+                <hr>
 
 
 
@@ -199,11 +200,13 @@ include '../function.php';
                     <button type="submit" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center> 
+                <hr>
             <!-- 
 AFFICHER LES VOITURES -->
 
 <center><div class="titretables">
             <h2>Liste véhicule</h2>
+            <hr>
             
         </div></center>
         
