@@ -14,7 +14,7 @@ h1{
     font-family:fantasy;
     font-weight: bold !important;
     font-size: 150px;
-    text-shadow: black 3px 3px 3px;
+    text-shadow: black 2px 2px 2px;
     bottom: 100px;
     color: gold;
     position: absolute;
@@ -73,7 +73,7 @@ text-shadow: black 2px 2px 2px;
 }
 .table{
 
-  background-color: whitesmoke;
+  background-color: white;
   
 
 }
@@ -92,7 +92,7 @@ td{
   font-family:fantasy;
   font-weight: bold;
   color: black;
-  text-shadow: whitesmoke 2px 2px 2px;
+  text-shadow: white 2px 2px 2px;
 
   
   
@@ -102,7 +102,7 @@ td{
 }
 footer{
 
-    background-image: url("image/393302f1-2020-hertz-hendrick-motorsp.webp");
+    background-image: url("image/automobile-1834279_1920.jpg");
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -159,7 +159,7 @@ footer{
   }
   
   #schroll a img:hover {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
     transition: 0.3s;
   }
 
@@ -230,7 +230,7 @@ footer{
   }
 
  body{
-  background-color:white;
+  background-color:whitesmoke;
 
  }
  
@@ -263,7 +263,7 @@ footer{
   height: 100%;
   background: url(image/fondCard.png);
   background-size: cover;
-  border : 1px solid whitesmoke;
+  border : 1px solid white;
   border-radius: 50px 0px 50px 0px;
   box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
 }

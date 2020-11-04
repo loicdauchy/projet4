@@ -48,7 +48,9 @@ for($i=0;$i<count($idCarlouer);$i++){
                 </a>
                 
                <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
-               
+               <a href="http://localhost/projet4/admin/ficheclients.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches clients</button></a>
+               <a href="http://localhost/projet4/admin/fichevoitures.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches voitures</button></a>
+               <a href="http://localhost/projet4/admin/fichelocations.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches locations</button></a>
             </nav><div class="schrollaccueil" id="schroll">
                 <h2 class="schroll">Gestionnaire administrateur</h2>
                 
@@ -85,50 +87,8 @@ for($i=0;$i<count($idCarlouer);$i++){
                     <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center>
-</section>
-<section class="ficheclient">
-<?php
-
-    $lister = $db->prepare('SELECT * FROM louer
-    INNER JOIN vehicules ON louer.id_car_vehicules = vehicules.id_car_vehicules
-    INNER JOIN clients ON louer.id_client_clients = clients.id_client_clients');
-    $lister->execute();
-    $lister = $lister->fetchALL(PDO::FETCH_ASSOC);
-    foreach($lister as $info) {
-        echo "<form class='formclient' action='index.php'><div class='ficheclient1 fondLocation'> <input style='margin-top:80px;' type='text' name='id' value='"."ID Car : ".$info['id_car_vehicules']."'>
-        <input type='text' name='idClient' value='".$info['marque_vehicules']." ".$info['modele_vehicules']."'>
-        <input type='text' name='idClient' value='"."ID Client : ".$info['id_client_clients']."'>
-        <input type='text' name='idClient' value='".$info['nom_clients']." ".$info['prenom_clients']."'>
-        <input type='date' name='dateloc' value='".$info['date_louer']."'>
-        <input type='date' name='datefinloc' value='".$info['date_fin']."'>";
-?>
-<?php
-        $date = date("Y-m-d");
-        if ($date >= $info['date_fin']){
-            echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-        }else if($date >= $info['date_louer'] AND $date <= $info['date_fin']){
-            echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-        }else if ($date < $info['date_louer'] AND $date < $info['date_fin']){
-            echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-        }else if ($late){
-            echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Location terminé'>";
-        }else{
-
-        }
-
-?>
-<?php    
-       echo "<button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
-    
-        </form>
-    
-        </div>";
-    }
-    
 
 
-?>
-</section></center>
 
 
 
@@ -182,12 +142,69 @@ include '../function.php';
 
 
 
-<!-- 
+
+
+<center><form style="width:20%;" action="index.php" method="GET">
+                <h2 class="text-center">Ajouter un nouveau véhicule</h2>   
+                <hr>    
+                <div class="form-group">
+                    <input type="text" name="marque" class="form-control" placeholder="Marque">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="modele" class="form-control" placeholder="Modele">
+                </div>
+                <div class="form-group">
+                    <input type="date" name="annees" class="form-control" placeholder="Années">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="kilometrage" class="form-control" placeholder="Klm">
+                </div>
+                <div class="form-group">
+                    <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
+                </div>   
+            </form><center>
+
+<!-- INFORMATION CLIENTS -->
+
+
+<hr>
+<center><form style="width:20%;"action="ajouterClient_traitement.php" method="post">
+                <h2 class="text-center">Ajouter un nouveau Client</h2>    
+                <hr>   
+                <div class="form-group">
+                    <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="prenom" class="form-control" placeholder="Prénom" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="adresse" class="form-control" placeholder="Adresse" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cp" class="form-control" placeholder="Code Postal" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ville" class="form-control" placeholder="Ville" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password_retype" class="form-control" placeholder="Re-tapez le mot de passe" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-warning btn-block">Ajouter</button>
+                </div>   
+            </form><center> 
+            <!-- 
 AFFICHER LES VOITURES -->
 
 <center><div class="titretables">
             <h2>Liste véhicule</h2>
-            <hr>
+            
         </div></center>
         
         <div class="liste">
@@ -229,153 +246,7 @@ AFFICHER LES VOITURES -->
             </table> 
             
         </div>
-
-<center><form style="width:20%;" action="index.php" method="GET">
-                <h2 class="text-center">Ajouter un nouveau véhicule</h2>   
-                <hr>    
-                <div class="form-group">
-                    <input type="text" name="marque" class="form-control" placeholder="Marque">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="modele" class="form-control" placeholder="Modele">
-                </div>
-                <div class="form-group">
-                    <input type="date" name="annees" class="form-control" placeholder="Années">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="kilometrage" class="form-control" placeholder="Klm">
-                </div>
-                <div class="form-group">
-                    <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
-                </div>   
-            </form><center>
-<section class="ficheclient">
-<?php
-                $recuperation = $db->query('SELECT * FROM vehicules');
-                while ($vehicule = $recuperation->fetch()) {
-                    echo "<form class='formclient' action='index.php'><div class='ficheclient1 fondVoiture'> <input style='margin-top:80px;' type='text' name='id' value='".$vehicule['id_car_vehicules']."'>
-                    <input type='text' name='marque' value='".$vehicule['marque_vehicules']."'>
-                    <input type='text' name='modele' value='".$vehicule['modele_vehicules']."'>
-                    <input type='date' name='annees' value='".$vehicule['annees_vehicules']."'>
-                    <input type='text' name='kilometrage' value='".$vehicule['kilometrage_vehicules']."'>";
-?>
-<?php
-                    $late = 1 ;
-                    $date = date("Y-m-d");
-                    $recup2 = $db->query('SELECT * FROM louer WHERE id_car_vehicules ='.$vehicule['id_car_vehicules'].'');
-                    $recup2 = $recup2->fetch();
-                    if ($date >= $recup2['date_fin']){
-                        echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-                    }else if($date >= $recup2['date_louer'] AND $date <= $recup2['date_fin']){
-                        echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-                    }else if ($date < $recup2['date_louer'] AND $date < $recup2['date_fin']){
-                        echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-                    }else if ($late){
-                        echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
-                    }else{
-
-                    }
-?>
-<?php                    
-                    echo"<button type='submit' value='modifier' name='action'>Modifier</button>
-                    <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
-                    
-                    </form>
-                    
-                    </div>";
-                }
-?>
-
-</section>
-
-<!-- INFORMATION CLIENTS -->
-
-<h3>Information Clients</h3>
-<hr>
-<center><form style="width:20%;"action="ajouterClient_traitement.php" method="post">
-                <h2 class="text-center">Ajouter un nouveau Client</h2>    
-                <hr>   
-                <div class="form-group">
-                    <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="prenom" class="form-control" placeholder="Prénom" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="adresse" class="form-control" placeholder="Adresse" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="cp" class="form-control" placeholder="Code Postal" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="ville" class="form-control" placeholder="Ville" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password_retype" class="form-control" placeholder="Re-tapez le mot de passe" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-warning btn-block">Ajouter</button>
-                </div>   
-            </form><center>
-<br>
-</section>
-<section class="ficheclient">
-<?php
-                $recuperation = $db->query('SELECT * FROM clients');
-                while ($client = $recuperation->fetch()) {
-                    echo "<form class='formclient' action='index.php'><div class='ficheclient1'> <input style='margin-top:80px;' type='text' name='id_client' value='".$client['id_client_clients']."'>
-                    <input type='text' name='nom' value='".$client['nom_clients']."'>
-                    <input type='text' name='prenom' value='".$client['prenom_clients']."'>
-                    <input type='text' name='adresse' value='".$client['adresse_clients']."'>
-                    <input type='text' name='cp' value='".$client['cp_clients']."'>
-                    <input type='text' name='ville' value='".$client['ville_clients']."'>
-                    <input type='text' name='mail' value='".$client['mail_clients']."'>";
-?>
-                        <select class='form-control' style='width:50%;' name='carDejaLouer'>
-                        <option value=''> Voiture déjà loué </option>
-<?php
-                        $recup = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
-                        while ($carDejaLouer = $recup->fetch()){                            
-                                echo "<option value=''>".$carDejaLouer['id_car_vehicules'] ."</option>";                                                                                                                                                        
-                    }
-?> 
-                        </select>
-<?php
-                        $late = 1 ;
-                        $date = date("Y-m-d");
-                        $recup1 = $db->query('SELECT * FROM louer WHERE id_client_clients ='.$client['id_client_clients'].'');
-                        $recup1 = $recup1->fetch();
-                        if ($date >= $recup1['date_fin']){
-                            echo "<input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'>";
-                        }else if($date >= $recup1['date_louer'] AND $date <= $recup1['date_fin']){
-                            echo "<input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'>";
-                        }else if ($date < $recup1['date_louer'] AND $date < $recup1['date_fin']){
-                            echo "<input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'>";
-                        }else if ($late){
-                            echo "<input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Pas de location'>";
-                        }else{
-
-                        }
-?>
-<?php                    
-                    echo"<button type='submit' value='modifier' name='action'>Modifier</button>
-                    <button style='margin-bottom:25px;' type='submit' value='supprimer' name='action'>Supprimer</button>
-                    
-                    </form>
-                    
-                    </div>";  
-                }
-?>
-</div>
-</section>
-      
-      
+        </section>
 <footer>
     <div class="container-fluid footer">
         <div class="row">
@@ -394,6 +265,7 @@ AFFICHER LES VOITURES -->
 
         </div>
     </div>
+    
 
 </footer>
 
