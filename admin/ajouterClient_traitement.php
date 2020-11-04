@@ -1,5 +1,5 @@
 <?php 
-    require_once '../connect.php';
+    include '../connect.php';
 
     if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['adresse']) && isset($_POST['cp']) && isset($_POST['ville']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_retype']))
     {
