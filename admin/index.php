@@ -136,12 +136,7 @@ include '../function.php';
     }
 
     if(isset($_GET['action']) && $_GET['action']=="modifier" && !empty($_GET['plusEnLoc'])){
-    //   finLocation();
-    $modifier = $db->prepare('UPDATE louer SET enLoc = :enLoc WHERE id_car_vehicules ='.$info['id_car_vehicules'].'');
-                $modifier->bindParam(':enLoc', $_GET['plusEnLoc'], PDO::PARAM_STR);
-                $modifier = $modifier->execute();
-                var_dump($modifier);
-                echo"toto";
+      finLocation();   
     }
 ?>               
 
