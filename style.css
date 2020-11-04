@@ -36,7 +36,6 @@ text-shadow: black 2px 2px 2px;
 }
 p{
 
-  background-color: rgba(255, 255, 255, 0.336);
 color:gold;
 font-weight: bold;
 text-shadow: black 2px 2px 2px;
@@ -73,7 +72,8 @@ text-shadow: black 2px 2px 2px;
 }
 .table{
 
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
+ 
   
 
 }
@@ -82,8 +82,8 @@ th{
 font-family: fantasy;
 font-weight: bold;
 font-size: 2.5vh;
-color: black;
-  text-shadow: goldenrod 2px 2px 2px;
+color: whitesmoke;
+  text-shadow: black 2px 2px 2px;
 
 }
 
@@ -91,8 +91,8 @@ td{
   
   font-family:fantasy;
   font-weight: bold;
-  color: black;
-  text-shadow: white 2px 2px 2px;
+  color: whitesmoke;
+  text-shadow: black 2px 2px 2px;
 
   
   

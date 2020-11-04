@@ -36,7 +36,7 @@ for($i=0;$i<count($idCarlouer);$i++){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="image/favicon_1" type="image/x-icon"/> 
+    <link rel="shortcut icon" href="image/shortcut" type="image/x-icon"/> 
     <title>hertz</title>
 </head>
 
@@ -79,7 +79,9 @@ for($i=0;$i<count($idCarlouer);$i++){
     </header >
     <section id="vehiculesList container-fluid" class="listevoituremain">
         <div class="titretables">
+            <hr>
             <center><h2>Liste véhicule</h2></center>
+            <hr>
         </div>
         
         <div class="liste">
