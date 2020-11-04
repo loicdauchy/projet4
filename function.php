@@ -1,7 +1,7 @@
 <?php
 function ajouterLocation () {
     include 'connect.php';
-    $ajouter = $db->prepare('INSERT INTO louer (id_car_vehicules, id_client_clients, date_louer, date_fin) VALUES (:idCar, :idClient, :dateloc, :datefinloc)');
+    $ajouter = $db->prepare('INSERT INTO louer (id_car_vehicules, id_client_clients, date_louer, date_fin, enLoc) VALUES (:idCar, :idClient, :dateloc, :datefinloc, :enLoc)');
         $ajouter->bindParam(':idCar', $_GET['id'], 
         PDO::PARAM_STR);
         $ajouter->bindParam(':idClient', $_GET['idClient'], 
@@ -9,6 +9,8 @@ function ajouterLocation () {
         $ajouter->bindParam(':dateloc', $_GET['dateloc'], 
         PDO::PARAM_STR);
         $ajouter->bindParam(':datefinloc', $_GET['datefinloc'], 
+        PDO::PARAM_STR);
+        $ajouter->bindParam(':enLoc', $_GET['enLoc'], 
         PDO::PARAM_STR);
         $estceok = $ajouter->execute();
         // $estceok->debugDumpParams();
@@ -138,5 +140,18 @@ function modifierClient () {
                         echo 'Veuillez recommencer svp, une erreur est survenue';
                     }
 }
+
+// function finLocation () {
+//     include 'connect.php';
+//     $modifier = $db->prepare('UPDATE louer SET enLoc = :enLoc WHERE id_car_vehicules ='.$info['id_car_vehicules'].'');
+//                 $modifier->bindParam(':enLoc', $_GET['plusEnLoc'], PDO::PARAM_STR);
+//                 $modifier = $modifier->execute();
+//                 print_r($modifier);
+//                 if($modifier){
+//                     echo 'votre enregistrement a bien été modifié';                  
+//                 } else {
+//                     echo 'Veuillez recommencer svp, une erreur est survenue';
+//                 }
+// }
 
 ?>

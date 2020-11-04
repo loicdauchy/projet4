@@ -4,10 +4,10 @@ html {
   }
 
 .headermain{
-  background: url(image/393302f1-2020-hertz-hendrick-motorsp.webp) fixed;
-  background-size : cover;
-  background-position:center;
-  min-height: 100vh;
+    background: url(image/headerbg.png) fixed;
+    background-size : cover;
+    background-position:center;
+    min-height: 100vh;
 }
 h1{
 
@@ -250,11 +250,17 @@ footer{
 
 
 .ficheclient {
+display: flex;
+flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.admintop{
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  width:100%;
 }
 
 .ficheclient1 {
@@ -292,10 +298,16 @@ footer{
   .formclient {
     width: 50%;
   }
+  .formAdd {
+    width: 80%;
+  }
 }
-@media screen and (max-width : 650px) {
+@media screen and (max-width : 768px) {
   .formclient {
     width: 100%;
+  }
+  .formAdd {
+    width: 80%;
   }
 }
 

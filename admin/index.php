@@ -63,13 +63,13 @@ for($i=0;$i<count($idCarlouer);$i++){
     <center><section class="admintop">
 <!-- AFFICHER LES LOCATIONS -->
 <div class="enregistrement container-fluid">
-    
+    <hr>
 <h3 id="registre" >Enregistrement d'une location</h3>
 <hr>
 
-<center><form style="width:20%;" action="index.php" method="GET">
-                <h2 class="text-center">Ajouter une nouvelle location</h2>    
-                <hr>   
+<center><form class="formAdd" style="width:20%;" action="index.php" method="GET">
+                <h2 class="text-center">Ajouter une nouvelle location</h2>
+                <hr>       
                 <div class="form-group">
                     <input type="text" name="id" class="form-control" placeholder="Référence de la voiture">
                 </div>
@@ -85,22 +85,19 @@ for($i=0;$i<count($idCarlouer);$i++){
                     <input type="date" name="datefinloc" class="form-control">
                 </div>
                 <div class="form-group">
+                    <label for="1">Début de la location</label>
+                    <input style="border:none; box-shadow:none;" type="radio" name="enLoc" value="1" class="form-control">               
+                </div>
+                <div class="form-group">
                     <button type="submit" value="ajouter" name="action" class="btn btn-warning btn-block">Ajouter</button>
                 </div>   
             </form><center>
-                <hr>
-
-
-
-
-
-
 
 
 <?php
 include '../function.php';
 // AJOUTER UNE LOCATION
-    if(isset($_GET['action']) && $_GET['action']=="ajouter" && !empty($_GET['id'])  && !empty($_GET['idClient']) && !empty($_GET['dateloc']) && !empty($_GET['datefinloc'])){     
+    if(isset($_GET['action']) && $_GET['action']=="ajouter" && !empty($_GET['id'])  && !empty($_GET['idClient']) && !empty($_GET['dateloc']) && !empty($_GET['datefinloc']) && !empty($_GET['enLoc'])){     
       ajouterLocation();
     }
     
@@ -137,6 +134,15 @@ include '../function.php';
     if(isset($_GET['action']) && $_GET['action']=="modifier"  && !empty($_GET['nom'])  && !empty($_GET['prenom'])  && !empty($_GET['adresse']) && !empty($_GET['cp']) && !empty($_GET['ville'])){
       modifierClient();         
     }
+
+    if(isset($_GET['action']) && $_GET['action']=="modifier" && !empty($_GET['plusEnLoc'])){
+    //   finLocation();
+    $modifier = $db->prepare('UPDATE louer SET enLoc = :enLoc WHERE id_car_vehicules ='.$info['id_car_vehicules'].'');
+                $modifier->bindParam(':enLoc', $_GET['plusEnLoc'], PDO::PARAM_STR);
+                $modifier = $modifier->execute();
+                var_dump($modifier);
+                echo"toto";
+    }
 ?>               
 
 
@@ -146,9 +152,9 @@ include '../function.php';
 
 
 
-<center><form style="width:20%;" action="index.php" method="GET">
-                <h2 class="text-center">Ajouter un nouveau véhicule</h2>   
-                <hr>    
+<center><form class="formAdd" style="width:20%;" action="index.php" method="GET">
+                <h2 class="text-center">Ajouter un nouveau véhicule</h2> 
+                <hr>      
                 <div class="form-group">
                     <input type="text" name="marque" class="form-control" placeholder="Marque">
                 </div>
@@ -170,9 +176,9 @@ include '../function.php';
 
 
 <hr>
-<center><form style="width:20%;"action="ajouterClient_traitement.php" method="post">
-                <h2 class="text-center">Ajouter un nouveau Client</h2>    
-                <hr>   
+<center><form class="formAdd" style="width:20%;"action="ajouterClient_traitement.php" method="post">
+                <h2 class="text-center">Ajouter un nouveau Client</h2>  
+                <hr>     
                 <div class="form-group">
                     <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
                 </div>
