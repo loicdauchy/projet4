@@ -4,25 +4,26 @@ include '../connect.php';
 <?php session_start();
 ?> 
 <?php
-$sql = 'SELECT * FROM `vehicules`';
+// $sql = 'SELECT * FROM `vehicules`';
+// $query = $db->prepare($sql);
+// $query->execute();
+// $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-$query = $db->prepare($sql);
-
-$query->execute();
-
-$result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-// $idCar = $db->query('SELECT id_car_vehicules FROM vehicules');
-// $idCar = $idCar->fetchAll();
+$lister = $db->prepare('SELECT * FROM louer
+    INNER JOIN vehicules ON louer.id_car_vehicules = vehicules.id_car_vehicules
+    INNER JOIN clients ON louer.id_client_clients = clients.id_client_clients');
+    $lister->execute();
+    $lister = $lister->fetchALL(PDO::FETCH_ASSOC);
 
 
 
-$idCarlouer = $db->query('SELECT id_car_vehicules FROM louer');
-$idCarlouer = $idCarlouer->fetchALL();
 
-for($i=0;$i<count($idCarlouer);$i++){
-    $vehiculesRechercher[]=$idCarlouer[$i]['id_car_vehicules'];
-}
+
+// $idCarlouer = $db->query('SELECT id_car_vehicules FROM louer');
+// $idCarlouer = $idCarlouer->fetchALL();
+// for($i=0;$i<count($idCarlouer);$i++){
+//     $vehiculesRechercher[]=$idCarlouer[$i]['id_car_vehicules'];
+// }
 // var_dump($vehiculesRechercher);
 ?>
 <!DOCTYPE html>
@@ -199,7 +200,7 @@ AFFICHER LES VOITURES -->
                 </thead>
                 <tbody>
                     <?php
-                    foreach($result as $produits){                    
+                    foreach($lister as $produits){                    
                     ?>
                     <tr>
                         <td><?= $produits['marque_vehicules'] ?></td>
@@ -208,12 +209,27 @@ AFFICHER LES VOITURES -->
                         <td><?= $produits['kilometrage_vehicules'] ?></td>
                         <?php
                         // echo $idCar[0]['id_car_vehicules'];
-                   if (in_array($produits['id_car_vehicules'],$vehiculesRechercher)){
-                       echo "<td> <img class='dispo' src='../image/close'> </td>";
+                //    if (in_array($produits['id_car_vehicules'],$vehiculesRechercher)){
+                //        echo "<td> <img class='dispo' src='../image/close'> </td>";
                        
-                   }else {
-                       echo "<td> <img class='dispo' src='../image/check'> </td>";
-                   }
+                //    }else {
+                //        echo "<td> <img class='dispo' src='../image/check'> </td>";
+                //    }
+                $date = date("Y-m-d");
+                
+                
+                if ($produits['enLoc'] == 2){
+                    echo "<td><input style='background:yellow; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='Disponible'></td>";        
+                }else if ($date >= $produits['date_fin'] AND $produits['enLoc'] == 1){
+                    echo "<td><input style='background:red; border-radius: 42px 42px 42px 42px;' type='text' name='late' value='En retard'></td>";
+                }else if($date >= $produits['date_louer'] AND $date <= $produits['date_fin'] AND $produits['enLoc'] == 1){
+                    echo "<td><input style='background:green; border-radius: 42px 42px 42px 42px;' type='text' name='loc' value='En cours'></td>";
+                }else if ($date < $produits['date_louer'] AND $date < $produits['date_fin'] AND $produits['enLoc'] == 1){
+                    echo "<td><input style='background:blue; border-radius: 42px 42px 42px 42px;' type='text' name='pasLoc' value='prévu prochainement'></td>";
+                } else{
+
+                }
+                
                     
                     ?>
                     </tr>
