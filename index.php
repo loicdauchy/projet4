@@ -164,10 +164,13 @@ $lister = $db->prepare('SELECT * FROM louer
             </div>
             <div class="info col-12 col-md-6" style="padding:0;">
                 <div class="divInfo">
-                <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit. A minus maxime alias incidunt<br>
-                    suscipit aspernatur expedita<br> nisi tempora autem assumenda.<br> Lorem ipsum, dolor sit amet<br>
-                    consectetur adipisicing elit.<br> Cum cumque ipsam necessitatibus quam, illum unde a?<br>
-                    Veritatis sapiente saepe voluptatem.</p>
+                <p style="text-align:center;">Bienvenue chez Hertz! Trouvez ici des véhicules<br>
+                 et transporteurs de location à des tarifs intéressants.<br> 
+                 Faites maintenant votre réservation en ligne et profitez de nos prix Hertz avantageux.<br> 
+                 Choisissez le véhicule que vous souhaitez parmi nos modèles<br> 
+                 de haute qualité et décidez si vous souhaitez payer en avance ou sur place.<br> 
+                 Réservez votre véhicule de location dans plus de 8500 agences Hertz<br> 
+                 dans le monde entier et profitez nos offres attractives.</p>
                 </div>
             </div>
 
