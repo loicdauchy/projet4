@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 30 oct. 2020 à 13:04
+-- Généré le :  jeu. 05 nov. 2020 à 10:24
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `password_clients` varchar(100) NOT NULL,
   `ip_clients` varchar(255) NOT NULL,
   PRIMARY KEY (`id_client_clients`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `clients`
@@ -48,7 +48,13 @@ CREATE TABLE IF NOT EXISTS `clients` (
 
 INSERT INTO `clients` (`id_client_clients`, `nom_clients`, `prenom_clients`, `adresse_clients`, `cp_clients`, `ville_clients`, `mail_clients`, `password_clients`, `ip_clients`) VALUES
 (21, 'dauchy', 'loic', '10 rue des moutoux', 39300, 'cize', 'dauchyl39@gmail.com', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '::1'),
-(22, 'dauchy', 'sarah', '10 boulevard du gÃ©nÃ©ral leclerc', 39000, 'Lons-le-saunier', 'dauchys@free.fr', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '::1');
+(22, 'dauchy', 'sarah', '10 boulevard du gÃ©nÃ©ral leclerc', 39000, 'Lons-le-saunier', 'dauchys@free.fr', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '::1'),
+(23, 'dauchy', 'loicdzf', '10 rue rufezdze', 39050, 'lons', 'grfzefzf@fezfe.fr', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '::1'),
+(27, 'dauchy', 'loic', '10 boulevard du gÃ©nÃ©ral leclerc', 39000, 'Lons-le-saunier', 'gezgzeg@grzgz.fr', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '::1'),
+(28, 'oui', 'ouioui', 'ouiouiouioui', 123456, 'ouiouiouiouioui', 'ouioui@ouioui.oui', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '::1'),
+(29, 'ggdsgfhtrjyj', 'hrhdf', '10 boulevard du gÃ©nÃ©ral leclerc', 39000, 'Lons-le-saunier', 'bfdbdgndneg@grzgz.fr', '9adfb0a6d03beb7141d8ec2708d6d9fef9259d12cd230d50f70fb221ae6cabd5', '::1'),
+(30, 'grgrethjryty', 'kjutkjrthe', 'ouiouiouioui', 123456, 'ouiouiouigrouioui', 'ouiogrhberui@ouioui.oui', '9adfb0a6d03beb7141d8ec2708d6d9fef9259d12cd230d50f70fb221ae6cabd5', '::1'),
+(31, 'yntrgefqgrg', 'ntbdvsfd', 'hngbfvdcs', 35324, 'bngdthrgqsfvbng', 'nethdsvsbdgfnt@jyrthds.gbehrz', '9adfb0a6d03beb7141d8ec2708d6d9fef9259d12cd230d50f70fb221ae6cabd5', '::1');
 
 -- --------------------------------------------------------
 
@@ -62,17 +68,20 @@ CREATE TABLE IF NOT EXISTS `louer` (
   `id_client_clients` bigint(255) NOT NULL,
   `date_louer` date NOT NULL,
   `date_fin` date NOT NULL,
+  `enLoc` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_car_vehicules`,`id_client_clients`),
   KEY `FK_location_id_client_clients` (`id_client_clients`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `louer`
 --
 
-INSERT INTO `louer` (`id_car_vehicules`, `id_client_clients`, `date_louer`, `date_fin`) VALUES
-(34, 21, '2020-10-07', '2020-10-21'),
-(39, 22, '2020-10-08', '2020-10-22');
+INSERT INTO `louer` (`id_car_vehicules`, `id_client_clients`, `date_louer`, `date_fin`, `enLoc`) VALUES
+(39, 22, '2020-10-26', '2020-11-02', 1),
+(44, 21, '2020-10-26', '2031-12-06', 1),
+(46, 23, '2022-10-19', '2023-01-08', 2),
+(49, 27, '2021-12-02', '2022-04-01', 1);
 
 -- --------------------------------------------------------
 
@@ -86,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
@@ -94,7 +103,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `email`, `password`) VALUES
 (2, 'l.dauchy@codeur.online', '$2y$10$.z0YcrPd4aQ6Lxvji/G35ufeZMtWfX6w2QFNqGHbEQ7z42hjdwQzG'),
-(4, 'dauchyl39@gmail.com', '$2y$10$q1e6vpYAy30HCmz7tQDWKOBI89ViJEG61AMYhjl6Tl3UfuimFtLpO');
+(4, 'dauchyl39@gmail.com', '$2y$10$q1e6vpYAy30HCmz7tQDWKOBI89ViJEG61AMYhjl6Tl3UfuimFtLpO'),
+(5, '', '$2y$10$ERb8hrAa4INcIVrWOV/I6Oxaf7GupdFtMn4kVcrOPmf5MHrYLMCzC');
 
 -- --------------------------------------------------------
 
@@ -110,18 +120,18 @@ CREATE TABLE IF NOT EXISTS `vehicules` (
   `annees_vehicules` date DEFAULT NULL,
   `kilometrage_vehicules` bigint(255) DEFAULT NULL,
   PRIMARY KEY (`id_car_vehicules`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `vehicules`
 --
 
 INSERT INTO `vehicules` (`id_car_vehicules`, `marque_vehicules`, `modele_vehicules`, `annees_vehicules`, `kilometrage_vehicules`) VALUES
-(34, 'peugeot', '508', '2020-10-06', 20000),
-(37, 'toyota', 'celica', '2020-10-06', 54000),
-(38, 'peugeot', '508', '2020-10-13', 54000),
 (39, 'peugeot', '508', '2020-10-13', 54000),
-(40, 'toyota', '508', '2020-10-01', 54000);
+(44, 'ford', 'kangoo', '2020-11-02', 54000),
+(46, 'renault', 'yaris', '2020-11-11', 20000),
+(49, 'toyota', '508', '2020-11-12', 20000),
+(53, 'toyota', '508', '2020-11-04', 10);
 
 --
 -- Contraintes pour les tables déchargées

@@ -64,26 +64,12 @@ $lister = $db->prepare('SELECT * FROM louer
       </li>
       <li class="nav-item">
       <button class="btn btn-warning"><a class="nav-link" href="http://localhost/projet4/admin/fichelocations.php">Fiches locations</a></button>
-      </li>
-      
-      
-      
+      </li> 
     </ul>
     
   </div>
 </nav>
-            <!-- <nav class="navbar navbar-expand-sm bg-white navbar-white">
-                <a class="navbar-brand" href="#">
-                    <div class="logonavbar"><img src="../image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
-                </div>
-                </a>
-               <ul>
-              <li><a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a></li>
-              <li><a href="http://localhost/projet4/admin/ficheclients.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches clients</button></a></li>
-              <li><a href="http://localhost/projet4/admin/fichevoitures.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches voitures</button></a></li>
-              <li><a href="http://localhost/projet4/admin/fichelocations.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches locations</button></a></li>
-               </ul> 
-            </nav> -->
+
             <div class="schrollaccueil" id="schroll">
                 <h2 class="schroll">Admin</h2>
                 
