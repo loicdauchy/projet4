@@ -34,31 +34,42 @@ for($i=0;$i<count($idCarlouer);$i++){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
-    <link rel="shortcut icon" href="../image/shortcut" type="image/x-icon"/> 
+    <link rel="shortcut icon" href="../image/icone.png" type="image/x-icon"/> 
     <title>hertz</title>
 </head>
 <body>
 <header class="headeradmin">
 
         <div class="headerdivadmin">
-            
-            <nav class="navbar navbar-expand-sm bg-white navbar-white">
-                <a class="navbar-brand" href="#">
-                    <div class="logonavbar"><img src="../image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
-                </div>
-                </a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="#"><img src="../image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="btn btn-warning"><a class="nav-link" href="http://localhost/projet4/">Page clients <span class="sr-only">(current)</span></a></button>   
+      </li>
+      <li class="nav-item">
+      <button class="btn btn-warning"><a class="nav-link" href="http://localhost/projet4/admin/ficheclients.php">Fiches clients</a></button>
+      </li>
+      <li class="nav-item">
+      <button class="btn btn-warning"><a class="nav-link" href="http://localhost/projet4/admin/fichevoitures.php">Fiches voitures</a></button>
+      </li>
+      <li class="nav-item">
+      <button class="btn btn-warning"><a class="nav-link" href="http://localhost/projet4/admin/index.php">Page admin</a></button>
+      </li> 
+    </ul>
+  </div>
+</nav>
+
+            <div class="schrollaccueil" id="schroll">
+                <h2 class="schroll">Admin</h2>
                 
-                <a href="http://localhost/projet4/"><button  class="btn btn-warning" type="redirect" name="redirect">Page clients</button></a>
-               <a href="http://localhost/projet4/admin/ficheclients.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches clients</button></a>
-               <a href="http://localhost/projet4/admin/fichevoitures.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches voitures</button></a>
-               <a href="http://localhost/projet4/admin/fichelocations.php"><button  class="btn btn-warning" type="redirect" name="redirect">fiches locations</button></a>
-               <a href="http://localhost/projet4/admin/index.php"><button  class="btn btn-warning" type="redirect" name="redirect">page admin</button></a>
-               
-            </nav><div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Locations</h2>
-                
-                <a href="#ficheclient"><img src="../image/document-98477_1280" width="80px"  alt=""></a>
-        </div>
+                <a href="#registre"><img src="../image/preferences-155386_1280" width="80px"  alt=""></a>
+            </div>
         </div>
     </header>
 <section class="ficheclient">
