@@ -34,9 +34,9 @@ h3{
 
   color: gold !important;
   font-family: fantasy;
-font-weight: bold;
-text-shadow: black 2px 2px 2px;
-}
+  font-weight: bold;
+  text-shadow: black 2px 2px 2px;
+  }
 
 
 .titreaccueil{
@@ -191,7 +191,7 @@ footer{
     
     
   }
-  .schrollaccueil{
+  .schrollaccueil1{
     margin-top: 180px;
     
   }
@@ -218,7 +218,7 @@ footer{
   .Bienvenue{
 
     font-family: fantasy;
-    color: black !important;
+    color:gold;
 
   
   }

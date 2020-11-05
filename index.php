@@ -80,13 +80,11 @@ $lister = $db->prepare('SELECT * FROM louer
                         <input type="password" name="password" placeholder="Mot de passe">
                         <button class="btn btn-warning" type="submit" name="submit">Connexion</button>
                         </form>
-                        </li>
-                        
+                        </li>                        
                     </ul>
-
-                </div>
+                </div> 
             </nav>
-                  
+         
     </header >
     <section id="vehiculesList container-fluid" class="listevoituremain">
         <div class="titretables">
