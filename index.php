@@ -46,7 +46,7 @@ for($i=0;$i<count($idCarlouer);$i++){
             
             <nav class="navbar navbar-expand-sm bg-white navbar-white">
                 <a class="navbar-brand" href="#">
-                    <div class="logonavbar"><img src="image/langfr-1920px-Hertz-Logo.svg.png" alt="Logo" style="width:200px;">
+                    <div class="logonavbar"><img src="image/langfr-1920px-Hertz-Logo.svg" alt="Logo" style="width:200px;">
                 </div>
                 </a>
                 
@@ -70,7 +70,7 @@ for($i=0;$i<count($idCarlouer);$i++){
                 </form>
         </div> 
 
-            </nav><div class="schrollaccueil" id="schroll">
+            </nav><div class="schrollaccueil1" id="schroll">
                 <h2 class="schroll">Voir nos véhicules</h2>
                 
                 <a href="#vehiculesList container-fluid"><img src="image/down-arrow" width="80px"  alt=""></a>

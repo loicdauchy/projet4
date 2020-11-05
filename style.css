@@ -182,6 +182,10 @@ footer{
     
   }
 
+  .schrollaccueil1{
+    
+    
+  }
   .schrollaccueil{
     margin-top: 180px;
     
@@ -253,7 +257,9 @@ footer{
     background-position: center;
     border: 1px solid black;
     box-shadow: black 2px 2px 2px;
+    
   }
+ 
   ::placeholder{
 
     color: black !important;

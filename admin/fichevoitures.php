@@ -34,7 +34,7 @@ for($i=0;$i<count($idCarlouer);$i++){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
-    <link rel="shortcut icon" href="../image/icone.png" type="image/x-icon"/> 
+    <link rel="shortcut icon" href="../image/car-2387235_1280" type="image/x-icon"/> 
     <title>hertz</title>
 </head>
 <body>
@@ -67,13 +67,13 @@ for($i=0;$i<count($idCarlouer);$i++){
 </nav>
 
             <div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Admin</h2>
+                <h2 class="schroll">Fiche voitures</h2>
                 
-                <a href="#registre"><img src="../image/preferences-155386_1280" width="80px"  alt=""></a>
+                <a href="#registre"><img src="../image/car-2387235_1280" width="80px"  alt=""></a>
             </div>
         </div>
     </header>
-    <section class="ficheclient">
+    <section class="ficheclient" style="margin-top:5%;">
     <h3>Fiche voitures</h3>
 <?php
                 $recuperation = $db->query('SELECT * FROM vehicules');
@@ -103,4 +103,4 @@ if(isset($_GET['action']) && $_GET['action']=="modifier"  && !empty($_GET['id'])
 ?>
 
 </section>
-            </body>
+</body>

@@ -38,7 +38,7 @@ $lister = $db->prepare('SELECT * FROM louer
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="../image/icone.png" type="image/x-icon"/> 
+    <link rel="shortcut icon" href="../image/preferences-155386_1280" type="image/x-icon"/> 
     <title>hertz</title>
 </head>
 <body class="adminbody">
@@ -210,7 +210,7 @@ AFFICHER LES VOITURES -->
                 <option value="Prévu prochainement" <?php if($start == 'prévu prochainement'){echo 'selected';}?>>Prévu prochainement</option>
     </select> -->
             
-            <input class="btn btn-warning" type="submit" name="search" value="Find">
+            <!-- <input class="btn btn-warning" type="submit" name="search" value="Find"> -->
             
         </div></center>
         
@@ -270,27 +270,5 @@ AFFICHER LES VOITURES -->
         </div>
         </form>
         </section>
-<footer>
-    <div class="container-fluid footer">
-        <div class="row">
-            <div class="maptitle col-12 col-md-6">
-                <iframe class="maps"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.8863249110263!2d5.551161015992889!3d46.668505379133705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cd78d87b0768b%3A0x6dc52ab5581eb62b!2s2%20Route%20de%20Montaigu%2C%2039000%20Lons-le-Saunier!5e0!3m2!1sfr!2sfr!4v1603722796036!5m2!1sfr!2sfr"
-                    width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                    aria-hidden="false" tabindex="0"></iframe>
-            </div>
-            <div class="info col-12 col-md-6">
-                <p>Lorem ipsum dolor<br> sit amet consectetur, adipisicing elit. A minus maxime alias incidunt
-                    suscipit aspernatur expedita nisi tempora autem assumenda. Lorem ipsum, dolor sit amet
-                    consectetur<br> adipisicing elit. Cum cumque ipsam necessitatibus quam, illum unde a?<br>
-                    Veritatis sapiente saepe voluptatem.</p>
-            </div>
-
-        </div>
-    </div>
-    
-
-</footer>
-
 </body>
 </html>
