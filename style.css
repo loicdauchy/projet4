@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
 html {
     scroll-behavior: smooth;
     overflow-y: scroll;
+    font-size: 100%;
   }
 
 .headermain{
@@ -34,13 +37,7 @@ h3{
 font-weight: bold;
 text-shadow: black 2px 2px 2px;
 }
-p{
 
-color:gold;
-font-weight: bold;
-text-shadow: black 2px 2px 2px;
-
-}
 
 .titreaccueil{
 
@@ -136,10 +133,8 @@ td{
 }
 footer{
 
-    background-image: url("image/automobile-1834279_1920.jpg");
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+   
     margin-top: 10%;
     display: flex;
     width: 100%;
@@ -161,13 +156,23 @@ footer{
 
 
 .info{
-
-  
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
   width:100%;
-      
+}
+
+.divInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%; 
+  height:100% !important; 
+ 
+}
+
+.divInfo p {
+  color: white !important;
+  font-family: 'Calligraffitti', cursive;
+  font-size: 1.5rem;
+  text-shadow: black 2px 2px 2px;
 }
 #schroll {
     color: gold;
@@ -376,7 +381,7 @@ flex-wrap: wrap;
     width: 200px;
     margin-bottom: 10px;
   }
-  nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top{
+  nav.navbar.navbar-expand-lg.navbar-white.bg-white.fixed-top{
     background: rgba(255, 255, 255,0.9) !important;
   }
   li.nav-item {
@@ -387,3 +392,9 @@ flex-wrap: wrap;
 li.nav-item {
   margin-right: 20px;
 }
+
+.maptitle.col-12.col-md-6{
+  padding: 0;
+}
+
+
