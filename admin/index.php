@@ -4,10 +4,10 @@ include '../connect.php';
 <?php session_start();
 ?>
 <?php
-// $sql = 'SELECT * FROM `vehicules`';
-// $query = $db->prepare($sql);
-// $query->execute();
-// $result = $query->fetchAll(PDO::FETCH_ASSOC);
+$sql = 'SELECT * FROM `vehicules`';
+$query = $db->prepare($sql);
+$query->execute();
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $lister = $db->prepare('SELECT * FROM louer
     INNER JOIN vehicules ON louer.id_car_vehicules = vehicules.id_car_vehicules
@@ -44,6 +44,7 @@ $lister = $db->prepare('SELECT * FROM louer
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <script src="../script.js"></script>
     <link rel="shortcut icon" href="../image/icone.png" type="image/x-icon" />
     <title>hertz</title>
 </head>
@@ -239,6 +240,50 @@ include '../function.php';
 
                                         <!-- 
 AFFICHER LES VOITURES -->
+
+<section id="vehiculesList container-fluid" class="listevoituremain">
+        <div class="titretables">
+            <hr>
+            <center>
+            <h2><span
+             class="txt-rotate"
+             data-period="1000"
+             data-rotate='[ "Miste des véhicules", "Liste des véhicules"]'>
+             </span></h2>
+             </center>
+            <hr>
+        </div>
+        
+        <div class="liste">
+            <table class="table client" style="margin-top:5%;">
+                <thead class="thead">
+                    <tr class="headtables">
+                        <th>Marque</th>
+                        <th>Modèle</th>
+                        <th>Année</th>
+                        <th>kilométrages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach($result as $produits){                    
+                    ?>
+                    <tr>
+                        <td><?= $produits['marque_vehicules'] ?></td>
+                        <td><?= $produits['modele_vehicules'] ?></td>
+                        <td><?= $produits['annees_vehicules'] ?></td>
+                        <td><?= $produits['kilometrage_vehicules'] ?></td>
+                       
+                    </tr>
+                    <?php 
+                    }
+                    ?>
+
+                </tbody>
+            </table> 
+            
+        </div>
+    </section>
 
                                         <center>
                                             <div class="titretables">
