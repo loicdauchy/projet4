@@ -191,7 +191,7 @@ footer{
     
     
   }
-  .schrollaccueil1{
+  .schrollaccueil{
     margin-top: 180px;
     
   }
@@ -395,6 +395,30 @@ li.nav-item {
 
 .maptitle.col-12.col-md-6{
   padding: 0;
+}
+
+p, label {
+  color: gold;
+  font-family: fantasy;
+  font-weight: bold;
+  text-shadow: black 2px 2px 2px;
+}
+
+button:hover {
+  background: url(image/wood-1759566_1920.jpg) !important;
+  backdrop-filter: brightness(20%) !important;
+  background-position: center;
+  color:gold !important;
+  z-index: 10000 !important;
+  border: none;
+}
+
+button a:hover {
+  color: gold !important;
+}
+
+button .navbar-toggler:hover {
+  background-image: url("image/gold-2889417_1920.jpg") !important;
 }
 
 

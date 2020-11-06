@@ -98,7 +98,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         <input type='text' name='npClient' value='".$info['nom_clients']." ".$info['prenom_clients']."'>
         <input type='date' name='dateloc' value='".$info['date_louer']."'>
         <input type='date' name='datefinloc' value='".$info['date_fin']."'>
-        <label for='2'>Mettre fin à la location</label>
+        <label style='color:black; text-shadow:none;' for='2'>Mettre fin à la location</label>
         <input style='margin-bottom:10px;' type='radio' name='plusEnLoc' value='2'>"; 
 
         $date = date("Y-m-d");
