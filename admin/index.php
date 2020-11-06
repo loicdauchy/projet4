@@ -84,9 +84,10 @@ $lister = $db->prepare('SELECT * FROM louer
 
                 </div>
             </nav>
-
-            <div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Admin</h2>
+            
+                            <div class="schrollaccueil" id="schroll">
+                <h2 class="schroll">Admin<hr>
+                </h2>
 
                 <a href="#registre"><img src="../image/preferences-155386_1280" width="80px" alt=""></a>
             </div>
@@ -245,9 +246,6 @@ AFFICHER LES VOITURES -->
                                                     <hr>Liste véhicule</h2>
                                                 <hr>
 
-
-                                                <input class="btn btn-warning" type="submit" name="search" value="Find">
-
                                             </div>
                                         </center>
 
@@ -306,32 +304,6 @@ AFFICHER LES VOITURES -->
 
                                         </div>
         </section>
-        <footer>
-            <div class="container-fluid footer">
-                <div class="row">
-                    <div class="maptitle col-12 col-md-6">
-                        <iframe class="maps"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.8863249110263!2d5.551161015992889!3d46.668505379133705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cd78d87b0768b%3A0x6dc52ab5581eb62b!2s2%20Route%20de%20Montaigu%2C%2039000%20Lons-le-Saunier!5e0!3m2!1sfr!2sfr!4v1603722796036!5m2!1sfr!2sfr"
-                            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
-                    </div>
-                    <div class="info col-12 col-md-6" style="padding:0;">
-                        <div class="divInfo">
-                            <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit. A minus maxime alias
-                                incidunt<br>
-                                suscipit aspernatur expedita<br> nisi tempora autem assumenda.<br> Lorem ipsum, dolor
-                                sit amet<br>
-                                consectetur adipisicing elit.<br> Cum cumque ipsam necessitatibus quam, illum unde
-                                a?<br>
-                                Veritatis sapiente saepe voluptatem.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-        </footer>
 
 </body>
 

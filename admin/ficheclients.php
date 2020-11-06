@@ -76,7 +76,7 @@ for($i=0;$i<count($idCarlouer);$i++){
 </nav>
 
             <div class="schrollaccueil" id="schroll">
-                <h2 class="schroll">Fiche clients</h2>
+                <h2 class="schroll">Fiche clients<hr></h2>
                 
                 <a href="#ficheclient"><img src="../image/man-303792_1280" width="80px"  alt=""></a>
             </div>
