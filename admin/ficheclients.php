@@ -83,7 +83,7 @@ for($i=0;$i<count($idCarlouer);$i++){
         </div>
     </header>
 <section id="ficheclient" class="ficheclient" style="margin-top:5%;">
-<h3>Information Clients<hr></h3>
+<h3>Informations Clients<hr></h3>
 <?php
                 $recuperation = $db->query('SELECT * FROM clients');
                 while ($client = $recuperation->fetch()) {
