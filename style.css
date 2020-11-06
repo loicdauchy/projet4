@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    font-size: 100%;
+  }
+
+.headermain{
+    background: url(image/headerbg.png) fixed;
+    background-size : cover;
+    background-position:center;
+    min-height: 100vh;
+}
+h1{
+
+    font-family:fantasy;
+    font-weight: bold !important;
+    font-size: 150px;
+    text-shadow: black 2px 2px 2px;
+    bottom: 100px;
+    color: gold;
+    position: absolute;
+    justify-content: center;
+}
+h2{
+
+  color: gold;
+font-family: fantasy;
+font-weight: bold;
+text-shadow: black 2px 2px 2px;
+}
+h3{
+
+  color: gold !important;
+  font-family: fantasy;
+  font-weight: bold;
+  text-shadow: black 2px 2px 2px;
+  }
+
+
+.titreaccueil{
+
+    display: flex;
+    justify-content: center;
+}
+.imgaccueil{
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.imageaccueil{
+
+    
+    height:100%;
+    width: 100%;
+    
+}
+
+.headtables{
+
+    background-image: url("image/gold-2889417_1920.jpg");
+}
+.table{
+
+  background-color: rgba(255, 255, 255, 0);
+  overflow-x: auto;
+  width: 40%;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+@media (max-width:1450px) {
+  .table {
+    width: 45%;
+  }
+}
+@media (max-width:1200px) {
+  .table {
+    width: 50%;
+  }
+}
+@media (max-width:1100px) {
+  .table {
+    width: 55%;
+  }
+}
+@media (max-width:1000px) {
+  .table {
+    width: 65%;
+  }
+}
+@media (max-width:796px) {
+  .table {
+    width: 75%;
+  }
+}
+@media (max-width:691px) {
+  .table {
+    width: 85%;
+  }
+}
+@media (max-width:610px) {
+  .table {
+    width: 100%;
+  }
+}
+th{
+
+font-family: fantasy;
+font-weight: bold;
+font-size: 2.5vh;
+color: whitesmoke;
+  text-shadow: black 2px 2px 2px;
+
+}
+
+td{
+  
+  font-family:fantasy;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: black 2px 2px 2px;
+
+  
+  
+  
+  
+
+}
+footer{
+
+    
+   
+    margin-top: 10%;
+    display: flex;
+    width: 100%;
+    
+}
+.maps{
+
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.connectadmin{
+
+  
+  margin-left: auto;
+  
+  
+}
+
+
+.info{
+  width:100%;
+}
+
+.divInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%; 
+  height:100% !important; 
+ 
+}
+
+.divInfo p {
+  color: white !important;
+  font-family: 'Calligraffitti', cursive;
+  font-size: 1.5rem;
+  text-shadow: black 2px 2px 2px;
+}
+#schroll {
+    color: gold;
+    -webkit-text-stroke:2px black ;
+    text-shadow: black 2px 2px 2px;
+    font-family:fantasy;
+    font-size:3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .schrollaccueil{
+    margin-top: 180px;
+    
+  }
+  
+  
+  #schroll a img {
+    transition: 0.7s;
+  }
+  
+  #schroll a img:hover {
+    transform: rotate(360deg);
+    transition: 0.3s;
+  }
+
+  .dispo {
+      width: 40px;
+      margin-left: 45px;
+  }
+
+  nav {
+      display: flex !important;
+      justify-content: space-between !important;
+  }
+  .Bienvenue{
+
+    font-family: fantasy;
+    color:gold;
+
+  
+  }
+  
+
+  .enregistrement.container-fluid{ 
+    margin-top:10%;
+  }
+  input{
+
+    font-family: fantasy;
+    font-weight: bold;
+    text-align: center;
+    border:none;
+    background-color: whitesmoke;
+    box-shadow: black 2px 2px 2px;
+  }
+  .form-control{
+
+    font-family: fantasy;
+    color: black;
+    
+  }
+  text{
+
+    color: black !important;
+  }
+  .date{
+
+    color: black !important;
+  }
+  button{
+    font-family: fantasy;
+    display: inline-block;
+    padding: 5px 10px;
+    background-image: url("image/gold-2889417_1920.jpg");
+    background-position: center;
+    border: 1px solid black;
+    box-shadow: black 2px 2px 2px;
+    
+  }
+ 
+  ::placeholder{
+
+    color: black !important;
+  }
+
+  hr{
+      background-color: gold !important;
+  }
+
+ body{
+  background-image: url("image/wood-1759566_1920.jpg");
+
+ }
+ 
+
+  
+.backgroundbody{
+
+  background-image: url("image/mercedes-841465_1920.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.listevoituremain{
+
+  margin-top:10%;
+}
+
+
+.ficheclient {
+display: flex;
+flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.admintop{
+
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+}
+
+.ficheclient1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  background: url(image/fondCard.png);
+  background-size: cover;
+  border : 1px solid white;
+  border-radius: 50px 0px 50px 0px;
+  box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+}
+
+.formclient {
+  width:30%;
+  min-height:50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.formclient .ficheclient1 input {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width : 1100px) {
+  .formclient {
+    width: 50%;
+  }
+  .formAdd {
+    width: 80%;
+  }
+}
+@media screen and (max-width : 768px) {
+  .formclient {
+    width: 100%;
+  }
+  .formAdd {
+    width: 80%;
+  }
+}
+
+.fondVoiture {
+  background: url(image/ficheVoiture.png);
+  background-size: cover;
+}
+
+.fondLocation {
+  background: url(image/ficheLocation.png);
+  background-size: cover;
+}
+
+
+
+@media (max-width:1023px) {
+
+  ul.navbar-nav.ml-auto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  button.btn.btn-warning{
+    width: 200px;
+    margin-bottom: 10px;
+  }
+  nav.navbar.navbar-expand-lg.navbar-white.bg-white.fixed-top{
+    background: rgba(255, 255, 255,0.9) !important;
+  }
+  li.nav-item {
+    margin: 0px !important;
+  }
+}
+
+li.nav-item {
+  margin-right: 20px;
+}
+
+.maptitle.col-12.col-md-6{
+  padding: 0;
+}
+
+p, label {
+  color: gold;
+  font-family: fantasy;
+  font-weight: bold;
+  text-shadow: black 2px 2px 2px;
+}
+
+button:hover {
+  background: url(image/wood-1759566_1920.jpg) !important;
+  backdrop-filter: brightness(20%) !important;
+  background-position: center;
+  color:gold !important;
+  z-index: 10000 !important;
+  border: none;
+}
+
+button a:hover {
+  color: gold !important;
+}
+
+button .navbar-toggler:hover {
+  background-image: url("image/gold-2889417_1920.jpg") !important;
+}
+
+
